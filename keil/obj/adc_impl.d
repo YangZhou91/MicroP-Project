@@ -1,5 +1,5 @@
 .\obj\adc_impl.o: ..\ADC_Impl.c
-.\obj\adc_impl.o: E:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\obj\adc_impl.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdint.h
 .\obj\adc_impl.o: ../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_adc.h
 .\obj\adc_impl.o: ../CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 .\obj\adc_impl.o: ../inc/core_cm4.h

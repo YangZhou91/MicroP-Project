@@ -1,6 +1,6 @@
 .\obj\lcd_impl.o: ..\LCD_Impl.c
-.\obj\lcd_impl.o: E:\Keil\ARM\ARMCC\bin\..\include\stdint.h
-.\obj\lcd_impl.o: E:\Keil\ARM\ARMCC\bin\..\include\stdio.h
+.\obj\lcd_impl.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\obj\lcd_impl.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdio.h
 .\obj\lcd_impl.o: ../CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 .\obj\lcd_impl.o: ../inc/core_cm4.h
 .\obj\lcd_impl.o: ../inc/core_cmInstr.h

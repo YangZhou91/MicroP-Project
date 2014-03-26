@@ -1,16 +1,15 @@
-.\obj\main.o: ../main.c
-.\obj\main.o: E:\Keil\ARM\ARMCC\bin\..\include\stdio.h
-.\obj\main.o: E:\Keil\ARM\ARMCC\bin\..\include\stdlib.h
-.\obj\main.o: E:\Keil\ARM\CMSIS\Include\arm_math.h
-.\obj\main.o: E:\Keil\ARM\CMSIS\Include\core_cm4.h
-.\obj\main.o: E:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\obj\main.o: ..\main.c
+.\obj\main.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdio.h
+.\obj\main.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdlib.h
+.\obj\main.o: ../inc/cmsis_os.h
+.\obj\main.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\obj\main.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\stddef.h
+.\obj\main.o: ..\tilt_thread.h
+.\obj\main.o: ../CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
+.\obj\main.o: ../inc/core_cm4.h
 .\obj\main.o: ../inc/core_cmInstr.h
 .\obj\main.o: ../inc/core_cmFunc.h
 .\obj\main.o: ../inc/core_cm4_simd.h
-.\obj\main.o: E:\Keil\ARM\ARMCC\bin\..\include\string.h
-.\obj\main.o: E:\Keil\ARM\ARMCC\bin\..\include\math.h
-.\obj\main.o: ../CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
-.\obj\main.o: ../inc/core_cm4.h
 .\obj\main.o: ../CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
 .\obj\main.o: ../stm32f4xx_conf.h
 .\obj\main.o: ../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_adc.h
@@ -40,10 +39,3 @@
 .\obj\main.o: ../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_usart.h
 .\obj\main.o: ../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_wwdg.h
 .\obj\main.o: ../STM32F4xx_StdPeriph_Driver/inc/misc.h
-.\obj\main.o: ../inc/cmsis_os.h
-.\obj\main.o: E:\Keil\ARM\ARMCC\bin\..\include\stddef.h
-.\obj\main.o: ../stm32f4_discovery_lis302dl.h
-.\obj\main.o: ../temperature_thread.h
-.\obj\main.o: ../tilt_thread.h
-.\obj\main.o: ../LCD_Impl.h
-.\obj\main.o: ../SevenSegLED.h

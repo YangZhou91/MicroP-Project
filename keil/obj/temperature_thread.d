@@ -1,9 +1,9 @@
 .\obj\temperature_thread.o: ..\temperature_thread.c
-.\obj\temperature_thread.o: E:\Keil\ARM\ARMCC\bin\..\include\stdio.h
-.\obj\temperature_thread.o: E:\Keil\ARM\ARMCC\bin\..\include\stdlib.h
+.\obj\temperature_thread.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdio.h
+.\obj\temperature_thread.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdlib.h
 .\obj\temperature_thread.o: ../CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 .\obj\temperature_thread.o: ../inc/core_cm4.h
-.\obj\temperature_thread.o: E:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\obj\temperature_thread.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdint.h
 .\obj\temperature_thread.o: ../inc/core_cmInstr.h
 .\obj\temperature_thread.o: ../inc/core_cmFunc.h
 .\obj\temperature_thread.o: ../inc/core_cm4_simd.h
@@ -38,7 +38,7 @@
 .\obj\temperature_thread.o: ../STM32F4xx_StdPeriph_Driver/inc/misc.h
 .\obj\temperature_thread.o: ../inc/core_cm4.h
 .\obj\temperature_thread.o: ../inc/cmsis_os.h
-.\obj\temperature_thread.o: E:\Keil\ARM\ARMCC\bin\..\include\stddef.h
+.\obj\temperature_thread.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\stddef.h
 .\obj\temperature_thread.o: ../ADC_Impl.h
 .\obj\temperature_thread.o: ../SevenSegLED.h
 .\obj\temperature_thread.o: ..\LCD_Impl.h

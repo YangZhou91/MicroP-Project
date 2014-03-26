@@ -1,6 +1,6 @@
 .\obj\sevensegled.o: ..\SevenSegLED.c
-.\obj\sevensegled.o: E:\Keil\ARM\ARMCC\bin\..\include\stdint.h
-.\obj\sevensegled.o: E:\Keil\ARM\ARMCC\bin\..\include\stdio.h
+.\obj\sevensegled.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\obj\sevensegled.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdio.h
 .\obj\sevensegled.o: ../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_adc.h
 .\obj\sevensegled.o: ../CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 .\obj\sevensegled.o: ../inc/core_cm4.h

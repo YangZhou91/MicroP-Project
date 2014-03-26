@@ -434,11 +434,6 @@
           <GroupName>Source Files</GroupName>
           <Files>
             <File>
-              <FileName>main.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../main.c</FilePath>
-            </File>
-            <File>
               <FileName>accelerometer_conf.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\accelerometer_conf.c</FilePath>
@@ -477,16 +472,6 @@
               <FileName>stm32f4_discovery_lis302dl.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\stm32f4_discovery_lis302dl.h</FilePath>
-            </File>
-            <File>
-              <FileName>temperature_thread.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\temperature_thread.c</FilePath>
-            </File>
-            <File>
-              <FileName>temperature_thread.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\temperature_thread.h</FilePath>
             </File>
             <File>
               <FileName>tilt_thread.c</FileName>
@@ -582,6 +567,11 @@
               <FileName>PWM_Servo_Impl.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\PWM_Servo_Impl.h</FilePath>
+            </File>
+            <File>
+              <FileName>main.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\main.c</FilePath>
             </File>
           </Files>
         </Group>

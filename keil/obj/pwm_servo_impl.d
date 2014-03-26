@@ -1,5 +1,5 @@
 .\obj\pwm_servo_impl.o: ..\PWM_Servo_Impl.c
-.\obj\pwm_servo_impl.o: E:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\obj\pwm_servo_impl.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdint.h
 .\obj\pwm_servo_impl.o: ../CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 .\obj\pwm_servo_impl.o: ../inc/core_cm4.h
 .\obj\pwm_servo_impl.o: ../inc/core_cmInstr.h

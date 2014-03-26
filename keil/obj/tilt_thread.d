@@ -1,9 +1,9 @@
 .\obj\tilt_thread.o: ..\tilt_thread.c
-.\obj\tilt_thread.o: E:\Keil\ARM\ARMCC\bin\..\include\stdio.h
-.\obj\tilt_thread.o: E:\Keil\ARM\ARMCC\bin\..\include\stdlib.h
+.\obj\tilt_thread.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdio.h
+.\obj\tilt_thread.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdlib.h
 .\obj\tilt_thread.o: ../inc/cmsis_os.h
-.\obj\tilt_thread.o: E:\Keil\ARM\ARMCC\bin\..\include\stdint.h
-.\obj\tilt_thread.o: E:\Keil\ARM\ARMCC\bin\..\include\stddef.h
+.\obj\tilt_thread.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\obj\tilt_thread.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\stddef.h
 .\obj\tilt_thread.o: ../CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 .\obj\tilt_thread.o: ../inc/core_cm4.h
 .\obj\tilt_thread.o: ../inc/core_cmInstr.h
@@ -46,7 +46,7 @@
 .\obj\tilt_thread.o: ..\MovingAverageFilter.h
 .\obj\tilt_thread.o: ../MEM_Interrupt.h
 .\obj\tilt_thread.o: ../SevenSegLED.h
-.\obj\tilt_thread.o: E:\Keil\ARM\ARMCC\bin\..\include\math.h
+.\obj\tilt_thread.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\math.h
 .\obj\tilt_thread.o: ..\LCD_Impl.h
 .\obj\tilt_thread.o: ..\tilt_thread.h
 .\obj\tilt_thread.o: ..\PWM_Servo_Impl.h

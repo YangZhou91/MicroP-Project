@@ -1,9 +1,9 @@
 .\obj\fputc_debug.o: ..\fputc_debug.c
-.\obj\fputc_debug.o: E:\Keil\ARM\ARMCC\bin\..\include\stdio.h
-.\obj\fputc_debug.o: E:\Keil\ARM\ARMCC\bin\..\include\rt_misc.h
+.\obj\fputc_debug.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdio.h
+.\obj\fputc_debug.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\rt_misc.h
 .\obj\fputc_debug.o: ../CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 .\obj\fputc_debug.o: ../inc/core_cm4.h
-.\obj\fputc_debug.o: E:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\obj\fputc_debug.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdint.h
 .\obj\fputc_debug.o: ../inc/core_cmInstr.h
 .\obj\fputc_debug.o: ../inc/core_cmFunc.h
 .\obj\fputc_debug.o: ../inc/core_cm4_simd.h

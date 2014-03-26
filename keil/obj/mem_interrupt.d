@@ -1,5 +1,5 @@
 .\obj\mem_interrupt.o: ..\MEM_Interrupt.c
-.\obj\mem_interrupt.o: E:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\obj\mem_interrupt.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdint.h
 .\obj\mem_interrupt.o: ../CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 .\obj\mem_interrupt.o: ../inc/core_cm4.h
 .\obj\mem_interrupt.o: ../inc/core_cmInstr.h

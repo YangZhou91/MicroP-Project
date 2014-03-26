@@ -203,7 +203,7 @@ void tilt_DispFlag_thread(void const * argument)
 			{
 				// signal received which is not timeout
 				// clear the signal flag for the temperature display thread
-				osSignalClear (temperature_TurnDispFlag_thread, SIGNAL_DISP_TEMPERATURE);
+				//osSignalClear (temperature_TurnDispFlag_thread, SIGNAL_DISP_TEMPERATURE);
 				
 				// turn the resource_locked flag off
 				ResourceLocked = 0;

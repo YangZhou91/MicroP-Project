@@ -3,12 +3,10 @@
 ".\obj\startup_stm32f4xx.o"
 ".\obj\rtx_conf_cm.o"
 "../rtx_lib/ARM/RTX_CM4.lib"
-".\obj\main.o"
 ".\obj\accelerometer_conf.o"
 ".\obj\adc_impl.o"
 ".\obj\sevensegled.o"
 ".\obj\stm32f4_discovery_lis302dl.o"
-".\obj\temperature_thread.o"
 ".\obj\tilt_thread.o"
 ".\obj\fputc_debug.o"
 ".\obj\lcd_impl.o"
@@ -19,6 +17,7 @@
 ".\obj\system_stm32f4xx.o"
 ".\obj\tilt_angle_calculation.o"
 ".\obj\pwm_servo_impl.o"
+".\obj\main.o"
 ".\obj\misc.o"
 ".\obj\stm32f4xx_adc.o"
 ".\obj\stm32f4xx_can.o"
@@ -50,7 +49,7 @@
 ".\obj\stm32f4xx_tim.o"
 ".\obj\stm32f4xx_usart.o"
 ".\obj\stm32f4xx_wwdg.o"
-E:\Keil\ARM\RV31\LIB\RTX_CM4.LIB
+"C:\Program Files\Keil\ARM\RV31\LIB\RTX_CM4.LIB"
 --library_type=microlib --strict --scatter ".\obj\output.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
