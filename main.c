@@ -8,9 +8,10 @@
  @param argument Unused
  */
 void thread(void const * argument);
-
+void keypad_thread(void const * argument);
 //! Thread structure for above thread
 osThreadDef(thread, osPriorityNormal, 1, 0);
+osThreadDef(keypad_thread, osPriorityNormal, 1, 0);
 
 /*!
  @brief Program entry point
@@ -18,6 +19,8 @@ osThreadDef(thread, osPriorityNormal, 1, 0);
 int main (void) {
 	// ID for thread
 	osThreadId tid_thread1;
+	osThreadId tid_keypad_thread;
+	
 	GPIO_InitTypeDef  GPIO_InitStructure;
 
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD, ENABLE);
@@ -31,7 +34,7 @@ int main (void) {
 
 	// Start thread
 	tid_thread1 = osThreadCreate(osThread(thread), NULL);
-
+	tid_keypad_thread = osThreadCreate(osThread(keypad_thread), NULL);
 	// The below doesn't really need to be in a loop
 	while(1){
 		osDelay(osWaitForever);
@@ -45,4 +48,11 @@ void thread (void const *argument) {
 		osDelay(1000);
 		GPIOD->BSRRH = GPIO_Pin_12;
 	}
+}	
+void keypad_thread(void const *argument){
+	while(1){
+	osDelay(1000);
+	osDelay(1000);
+	}
 }
+
