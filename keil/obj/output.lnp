@@ -18,6 +18,7 @@
 ".\obj\tilt_angle_calculation.o"
 ".\obj\pwm_servo_impl.o"
 ".\obj\main.o"
+".\obj\keypad.o"
 ".\obj\misc.o"
 ".\obj\stm32f4xx_adc.o"
 ".\obj\stm32f4xx_can.o"

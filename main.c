@@ -3,9 +3,7 @@
 # include "cmsis_os.h"
 # include "tilt_thread.h"
 # include "stm32f4xx.h"
-
-
-
+# include "keypad.h"
 
 
 /* Definition of threads */
@@ -33,9 +31,16 @@ int main(void){
 	
 	tilt_thread = osThreadCreate(osThread(tilt_detection_thread),NULL); // Calculate pitch and row
 	osThreadDef(tilt_DispFlag_thread, osPriorityNormal, 1, 0);         // display tilt angles thread
-
+	keypad_init();
 	// put the main to sleep
 	while(1){
-		osDelay(osWaitForever);
+		//osDelay(osWaitForever);
+		//if(readKeys() != 0xFF){
+		osDelay(1000);
+				uint8_t number_pressed;
+				number_pressed = readKeys();
+				printf("The number  %u \n", number_pressed);
+		
+		//}
 	}
 }

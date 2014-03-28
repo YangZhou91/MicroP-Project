@@ -1,4 +1,4 @@
-#include "common.h"
+//#include "common.h"
 #include "keypad.h"
 
 EXTI_InitTypeDef   EXTI_InitStructure_keypad;
@@ -23,7 +23,7 @@ void keypad_init(){
   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10;
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
   GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
-  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
+  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_25MHz;
   GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
   GPIO_Init(GPIOD, &GPIO_InitStructure);
 	
@@ -86,6 +86,7 @@ uint8_t readKeys(){
 		if (pin5) return 9;
 		if (pin4) return 11;
 	}
+
 	return 0xFF; // when nothing pressed
 	
 	

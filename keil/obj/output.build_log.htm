@@ -3,16 +3,15 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
-
 Z:\Desktop\Project\keil\rtx.uvproj
-Project File Date:  03/26/2014
+Project File Date:  03/27/2014
 
 <h2>Output:</h2>
 Build target 'Project'
 linking...
 .\obj\output.axf: Warning: L6304W: Duplicate input file .\obj\rtx_conf_cm.o ignored.
 .\obj\output.axf: Warning: L6304W: Duplicate input file .\obj\system_stm32f4xx.o ignored.
-Program Size: Code=27316 RO-data=876 RW-data=144 ZI-data=8980  
+Program Size: Code=27644 RO-data=876 RW-data=152 ZI-data=8980  
 Finished: 0 information, 2 warning and 0 error messages.
 FromELF: creating hex file...
 ".\obj\output.axf" - 0 Error(s), 2 Warning(s).
@@ -20,4 +19,64 @@ Load "Z:\\Desktop\\Project\\keil\\obj\\output.axf"
 Erase Done.
 Programming Done.
 Verify OK.
-
+</pre>
+</body>
+</html>
+ityNormal, 1, 0);         // display tilt angles thread
+..\main.c: 4 warnings, 0 errors
+linking...
+.\obj\output.axf: Warning: L6304W: Duplicate input file .\obj\rtx_conf_cm.o ignored.
+.\obj\output.axf: Warning: L6304W: Duplicate input file .\obj\system_stm32f4xx.o ignored.
+Program Size: Code=27724 RO-data=876 RW-data=152 ZI-data=8980  
+Finished: 0 information, 2 warning and 0 error messages.
+FromELF: creating hex file...
+".\obj\output.axf" - 0 Error(s), 6 Warning(s).
+Load "Z:\\Desktop\\Project\\keil\\obj\\output.axf" 
+Erase Done.
+Programming Done.
+Verify OK.
+ing Done.
+Verify OK.
+O_WriteBit (GPIOD, GPIO_Pin_0, dataReg[0]);
+..\LCD_Impl.c(204): warning:  #188-D: enumerated type mixed with another type
+        GPIO_WriteBit (GPIOD, GPIO_Pin_1, dataReg[1]);
+..\LCD_Impl.c(205): warning:  #188-D: enumerated type mixed with another type
+        GPIO_WriteBit (GPIOD, GPIO_Pin_2, dataReg[2]);
+..\LCD_Impl.c(207): warning:  #188-D: enumerated type mixed with another type
+        GPIO_WriteBit (GPIOD, GPIO_Pin_3, dataReg[3]);
+..\LCD_Impl.c(208): warning:  #188-D: enumerated type mixed with another type
+        GPIO_WriteBit (GPIOD, GPIO_Pin_4, dataReg[4]);  
+..\LCD_Impl.c(209): warning:  #188-D: enumerated type mixed with another type
+        GPIO_WriteBit (GPIOD, GPIO_Pin_5, dataReg[5]);
+..\LCD_Impl.c(211): warning:  #188-D: enumerated type mixed with another type
+        GPIO_WriteBit (GPIOD, GPIO_Pin_6, dataReg[6]);  
+..\LCD_Impl.c(212): warning:  #188-D: enumerated type mixed with another type
+        GPIO_WriteBit (GPIOD, GPIO_Pin_7, dataReg[7]);
+..\LCD_Impl.c: 8 warnings, 0 errors
+compiling calibration.c...
+compiling MEM_Interrupt.c...
+compiling MovingAverageFilter.c...
+..\MovingAverageFilter.c(26): warning:  #177-D: variable "sign" was declared but never referenced
+        int32_t average = 0, sign=0;
+..\MovingAverageFilter.c(137): warning:  #1-D: last line of file ends without a newline
+  }
+..\MovingAverageFilter.c: 2 warnings, 0 errors
+compiling RTX_Conf_CM.c...
+compiling system_stm32f4xx.c...
+compiling tilt_angle_calculation.c...
+compiling PWM_Servo_Impl.c...
+compiling main.c...
+..\main.c(46): warning:  #1-D: last line of file ends without a newline
+  }
+..\main.c(25): warning:  #550-D: variable "tilt_thread" was set but never used
+        osThreadId tilt_thread;
+..\main.c(26): warning:  #550-D: variable "tilt_TurnDispFlag_thread" was set but never used
+        osThreadId tilt_TurnDispFlag_thread;
+..\main.c(35): warning:  #177-D: variable "os_thread_def_tilt_DispFlag_thread" was declared but never referenced
+        osThreadDef(tilt_DispFlag_thread, osPriorityNormal, 1, 0);         // display tilt angles thread
+..\main.c: 4 warnings, 0 errors
+compiling keypad.c...
+keypad.c: Error:  #5: cannot open source input file "keypad.c": No such file or directory
+keypad.c: 0 warnings, 1 error
+".\obj\output.axf" - 1 Error(s), 19 Warning(s).
+Target not created
