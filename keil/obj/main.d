@@ -4,7 +4,6 @@
 .\obj\main.o: ../inc/cmsis_os.h
 .\obj\main.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdint.h
 .\obj\main.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\stddef.h
-.\obj\main.o: ..\tilt_thread.h
 .\obj\main.o: ../CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 .\obj\main.o: ../inc/core_cm4.h
 .\obj\main.o: ../inc/core_cmInstr.h

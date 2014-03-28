@@ -531,16 +531,6 @@
               <FilePath>..\stm32f4_discovery_lis302dl.h</FilePath>
             </File>
             <File>
-              <FileName>tilt_thread.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\tilt_thread.c</FilePath>
-            </File>
-            <File>
-              <FileName>tilt_thread.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\tilt_thread.h</FilePath>
-            </File>
-            <File>
               <FileName>fputc_debug.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\fputc_debug.c</FilePath>
