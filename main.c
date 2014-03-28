@@ -2,6 +2,9 @@
 
 #include "stm32f4xx.h"
 #include "cmsis_os.h"
+#include "keypad.h"
+#include <stdio.h>
+
 
 /*!
  @brief Thread to perform menial tasks such as switching LEDs
@@ -50,8 +53,14 @@ void thread (void const *argument) {
 	}
 }	
 void keypad_thread(void const *argument){
+	keypad_init();
 	while(1){
 	osDelay(1000);
+	uint8_t number_pressed;
+	number_pressed = readKeys();
+		if(number_pressed != 255){
+			printf("The number being %u \n", number_pressed);
+		}
 	osDelay(1000);
 	}
 }
