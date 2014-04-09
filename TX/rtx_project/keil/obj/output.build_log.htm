@@ -11,39 +11,16 @@ Build target 'Project'
 compiling main.c...
 ../userbutton_config.h(4): warning:  #1-D: last line of file ends without a newline
   void EXTI_NVIC_Config_PushButton(void);
-../main.c(74): warning:  #550-D: variable "tilt_thread" was set but never used
+../main.c(66): warning:  #550-D: variable "tilt_thread" was set but never used
         osThreadId tilt_thread;
-../main.c(76): warning:  #550-D: variable "tid_thread1" was set but never used
+../main.c(68): warning:  #177-D: variable "tid_thread1" was declared but never referenced
         osThreadId tid_thread1;
-../main.c(77): warning:  #177-D: variable "GPIO_InitStructure" was declared but never referenced
+../main.c(69): warning:  #177-D: variable "GPIO_InitStructure" was declared but never referenced
         GPIO_InitTypeDef  GPIO_InitStructure;
-../main.c(100): warning:  #550-D: variable "readreg" was set but never used
+../main.c(91): warning:  #550-D: variable "readreg" was set but never used
         uint8_t readreg=0x00;
 ../main.c: 5 warnings, 0 errors
 linking...
-Program Size: Code=23644 RO-data=892 RW-data=172 ZI-data=8124  
+Program Size: Code=23628 RO-data=876 RW-data=172 ZI-data=8124  
 FromELF: creating hex file...
 ".\obj\output.axf" - 0 Error(s), 5 Warning(s).
-Load "Z:\\Desktop\\Project\\TX\\rtx_project\\keil\\obj\\output.axf" 
-Erase Done.
-Programming Done.
-Verify OK.
-</pre>
-</body>
-</html>
-
-..\tilt_thread.c(201): warning:  #177-D: variable "transmitRollPitch" was declared but never referenced
-        float transmitRollPitch[2];
-..\tilt_thread.c(208): warning:  #550-D: variable "tokentilt" was set but never used
-        uint32_t tokentilt;         // Return of semwait
-..\tilt_thread.c(281): warning:  #111-D: statement is unreachable
-        return;
-..\tilt_thread.c(31): warning:  #550-D: variable "reset_flag" was set but never used
-  static int reset_flag=1;
-..\tilt_thread.c: 6 warnings, 0 errors
-linking...
-.\obj\output.axf: Error: L6218E: Undefined symbol temperature_TurnDispFlag_thread (referred from tilt_thread.o).
-Not enough information to list image symbols.
-Finished: 1 information, 0 warning and 1 error messages.
-".\obj\output.axf" - 1 Error(s), 11 Warning(s).
-Target not created

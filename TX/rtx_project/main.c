@@ -29,14 +29,6 @@ void thread_keypad(void const * argument);
 
 
 
-/*!
- @brief Thread to perform menial tasks such as switching LEDs
- @param argument Unused
- */
-void thread(void const * argument);
-
-//! Thread structure for above thread
-osThreadDef(thread, osPriorityNormal, 1, 0);
 
 //! Thread def for above thread
 //osThreadDef(temperature_detection_thread, osPriorityNormal, 1, 0); // temperature detection thread
@@ -76,8 +68,7 @@ int main (void) {
 	osThreadId tid_thread1;
 	GPIO_InitTypeDef  GPIO_InitStructure;
 
-// Start thread
-	tid_thread1 = osThreadCreate(osThread(thread), NULL);
+
   tilt_thread = osThreadCreate(osThread(tilt_detection_thread),NULL);
 //	tilt_transmit_thread = osThreadCreate(osThread(transmitTiltAngles),NULL);
 	
