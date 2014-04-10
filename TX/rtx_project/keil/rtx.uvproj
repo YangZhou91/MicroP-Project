@@ -553,6 +553,16 @@
               <FileType>5</FileType>
               <FilePath>..\userbutton_config.h</FilePath>
             </File>
+            <File>
+              <FileName>mode2_thread.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\mode2_thread.c</FilePath>
+            </File>
+            <File>
+              <FileName>mode2_thread.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\mode2_thread.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

@@ -48,3 +48,4 @@
 .\obj\main.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdio.h
 .\obj\main.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\inttypes.h
 .\obj\main.o: ../userbutton_config.h
+.\obj\main.o: ../mode2_thread.h

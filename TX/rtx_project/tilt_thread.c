@@ -195,6 +195,7 @@ void tilt_detection_thread(void const *argument)
  @brief Thread to display tilt angles
  @param argument Unused
 */
+/*
 void tilt_DispFlag_thread(void const * argument)
 {
 	//uint8_t transmitRoll, transmitPitch; 
@@ -256,9 +257,11 @@ void tilt_DispFlag_thread(void const * argument)
 	}
 
 }
+*/
 
 void transmitTiltAngles(void const * argument)
 {
+
 	float transmitRollPitch[2];
 	
 	transmitGetID = osThreadGetId();

@@ -16,6 +16,7 @@
 ".\obj\tilt_angle_calculation.o"
 ".\obj\keypad.o"
 ".\obj\userbutton_config.o"
+".\obj\mode2_thread.o"
 ".\obj\misc.o"
 ".\obj\stm32f4xx_adc.o"
 ".\obj\stm32f4xx_can.o"

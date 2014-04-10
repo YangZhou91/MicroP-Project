@@ -12,45 +12,52 @@
 #include <inttypes.h>
 #include "stm32f4xx_conf.h"
 #include "userbutton_config.h"
-
+#include "mode2_thread.h"
 
 int32_t key_signal = 3;
 // Function prototype
 void thread_keypad(void const * argument);
-void stop_all_threads(void);
-void test_thread_function(void const * argument);
+void mode2_thread(void const *argument);
+//void transmitTiltAngles(void const * argument);
+static void set_mode2_signal(void);
+static void set_mode1_signal(void);
+
 // Thread ids
 osThreadId temperature_TurnDispFlag_thread;
 osThreadId tilt_TurnDispFlag_thread;
-osThreadId Alarm_LED_threadId;
+//osThreadId Alarm_LED_threadId;
 osThreadId tilt_transmit_thread;
 osThreadId keypad_thread;
-osThreadId test_thread_id;
+static osThreadId tid_mode2;
+static osThreadId tid_mode1;
 
 // Thread defination
 //osThreadDef(temperature_detection_thread, osPriorityNormal, 1, 0); // temperature detection thread
 osThreadDef(tilt_detection_thread, osPriorityNormal, 1, 0);        // tilt angles detection thread
 osThreadDef(transmitTiltAngles, osPriorityNormal, 1, 0);             // tilt transmit thread
 osThreadDef(thread_keypad, osPriorityNormal, 1, 0);
-//osThreadDef(transmitTiltAngles, osPriorityNormal, 1, 0);             // tilt transmit thread
-osThreadDef(test_thread_function, osPriorityNormal, 1, 0);
+osThreadDef(mode2_thread, osPriorityNormal, 1, 0);
+
+
 
 // Semaphore creation
-osSemaphoreId semaphore;
-osSemaphoreDef(semaphore);
+//osSemaphoreId semaphore;
+//osSemaphoreDef(semaphore);
 
 
 
 // Thread status which will be used in the thread termination
-osStatus keypad_thread_status;
-osStatus test_thread_status;
-
+osStatus mode1_thread_status;
+osStatus mode2_thread_status;
 
 /*!
  @brief Program entry point
  */
 int main (void) {
 
+	//Create semaphore with one resource
+//	semaphore = osSemaphoreCreate(osSemaphore(semaphore), 1);
+	
 // Init the pushButton
 	EXTI_NVIC_Config_PushButton();	
 	
@@ -60,26 +67,49 @@ int main (void) {
 	GPIO_InitTypeDef  GPIO_InitStructure;
 
 //Make thread active 
-//  tilt_thread = osThreadCreate(osThread(tilt_detection_thread),NULL);
-//	tilt_transmit_thread = osThreadCreate(osThread(transmitTiltAngles),NULL);
-//	keypad_thread = osThreadCreate(osThread(thread_keypad), NULL);
-	test_thread_id = osThreadCreate(osThread(test_thread_function), NULL);
-	osDelay(1000);
-	test_thread_status = osThreadTerminate(test_thread_id);
+  tilt_thread = osThreadCreate(osThread(tilt_detection_thread),NULL);
+	tilt_transmit_thread = osThreadCreate(osThread(transmitTiltAngles), NULL);
+	//keypad_thread = osThreadCreate(osThread(thread_keypad), NULL);
+	void 
+
 	wireless_spi_Init();
-	
+
 	//----------------TX------------------------------
 	uint8_t readreg=0x00;
-	
 	readreg = read_Status_Register(WIRELESS_STATUS_VERSION);
+	/*while(1){
+		osDelay(osWaitForever);
+	}
+	*/
+}
+static void set_mode1_signal(void){
+	int32_t signal;
+	printf("Enter the set mode1 signal method");
+	tid_mode1 = osThreadCreate(osThread(transmitTiltAngles), NULL);
+	if(tid_mode1 == NULL){
+		printf("The thread didn't create");
+	}
+	else{
+		signal = osSignalSet(tid_mode1, 0x00000005);
+	}
+}
+
+static void set_mode2_signal(void){
+	int32_t signal;
 	
+	printf("Enter the set_mode2_signal method.\n");
+	tid_mode2 = osThreadCreate(osThread(mode2_thread), NULL);
+	if(tid_mode2 == NULL){
+		printf("The thread didn't create");
+	}
+	else{
+		signal = osSignalSet(tid_mode2, 0x00000005);
+ 	}
 }
 
 
 void thread_keypad(void const *argument){
-	printf("keypad thread entered!");		
-//	osThreadDef(transmitTiltAngles, osPriorityNormal, 1, 0);             // tilt transmit thread
-//	osThreadId tilt_transmit_thread;
+	printf("keypad thread entered! \n");		
 	
 	int num = -1;
 	char ch;
@@ -107,54 +137,46 @@ void thread_keypad(void const *argument){
 			if (ch != 'v'){
 				if (ch == 'A'){
 					printf("Enter mode 1 \n");
-					//tilt_transmit_thread = osThreadCreate(osThread(transmitTiltAngles),NULL);
-					
+					//mode2_thread_status = osThreadTerminate(tid_mode2);
+					//set_mode1_signal();
+//					tilt_transmit_thread = osThreadCreate(osThread(transmitTiltAngles),NULL);
 				}else if (ch == 'B'){
 					printf("Enter mode 2 \n");
+					mode1_thread_status = osThreadTerminate(tid_mode1);
+					set_mode2_signal();
 				}else if (ch == 'C'){
-					printf("");
+					printf("Enter mode 3 \n");
 				}else
 					printf ("%c", ch);
 			}
 			}
 	}
 }
+void PushBotton_ISR(void){
+	
+	return;
+}
+
 // Push button interrupt isr
 
 void EXTI0_IRQHandler(void)
 
 {
-
   if(EXTI_GetITStatus(EXTI_Line0) != RESET)
 
   {
 		// call the push button interrupt isr
 		//PushButton_ISR();
 		printf("botton pressed. \n");
-		stop_all_threads();
-//	  osThreadTerminate (tilt_transmit_thread);
-//		osThreadTerminate (tilt_TurnDispFlag_thread);
+		PushBotton_ISR();
 		
 		// wait to avoid button debounce
 		//LCD_Delay_Longer(100);
 
     /* Clear the EXTI line 1 pending bit */
     EXTI_ClearITPendingBit(EXTI_Line0);
-
   }
 }
 
-void stop_all_threads(void){
-	keypad_thread_status = osThreadTerminate(keypad_thread);
-	test_thread_status = osThreadTerminate(test_thread_id);
-	return;
-}
-
-void test_thread_function(void const * argument){
-	while(1){
-		printf("This is test thread \n");
-		osDelay(500);
-	}
-}
 
 
