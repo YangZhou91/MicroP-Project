@@ -268,9 +268,9 @@ void transmitTiltAngles(void const * argument)
 	
 	while(1)
 	{
-		osSignalWait(SIGNAL_TRANSMIT, osWaitForever);
+		//osSignalWait(SIGNAL_TRANSMIT, osWaitForever);
 		
-		transmittingFlag=1;
+		//transmittingFlag=1;
 		
 		transmitRollPitch[0] = roll;
 		transmitRollPitch[1] = pitch;

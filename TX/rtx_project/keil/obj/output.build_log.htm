@@ -8,16 +8,19 @@ Project File Date:  04/09/2014
 
 <h2>Output:</h2>
 Build target 'Project'
-compiling main.c...
-../userbutton_config.h(4): warning:  #1-D: last line of file ends without a newline
-  void EXTI_NVIC_Config_PushButton(void);
-../mode2_thread.h(1): warning:  #1-D: last line of file ends without a newline
+compiling mode2_thread.c...
+..\mode2_thread.h(1): warning:  #1-D: last line of file ends without a newline
   void mode2_thread(void const *argument);
-../main.c(64): warning:  #550-D: variable "tilt_thread" was set but never used
-        osThreadId tilt_thread;
-../main.c(66): warning:  #177-D: variable "tid_thread1" was declared but never referenced
-        osThreadId tid_thread1;
-../main.c(67): warning:  #177-D: variable "GPIO_InitStructure" was declared but never referenced
+..\mode2_thread.c(14): warning:  #1-D: last line of file ends without a newline
+  }
+..\mode2_thread.c: 2 warnings, 0 errors
+linking...
+Program Size: Code=23452 RO-data=892 RW-data=184 ZI-data=8128  
+FromELF: creating hex file...
+".\obj\output.axf" - 0 Error(s), 2 Warning(s).
+Load "Z:\\Desktop\\Project\\TX\\rtx_project\\keil\\obj\\output.axf" 
+Error: Flash Download failed  -  Target DLL has been cancelled
+e" was declared but never referenced
         GPIO_InitTypeDef  GPIO_InitStructure;
 ../main.c(78): warning:  #550-D: variable "readreg" was set but never used
         uint8_t readreg=0x00;
@@ -25,25 +28,12 @@ compiling main.c...
         int32_t signal;
 ../main.c(98): warning:  #550-D: variable "signal" was set but never used
         int32_t signal;
-../main.c(85): warning:  #177-D: function "set_mode1_signal" was declared but never referenced
-  static void set_mode1_signal(void){
-../main.c: 9 warnings, 0 errors
+../main.c: 8 warnings, 0 errors
 linking...
 Program Size: Code=23452 RO-data=892 RW-data=184 ZI-data=8128  
 FromELF: creating hex file...
-".\obj\output.axf" - 0 Error(s), 9 Warning(s).
+".\obj\output.axf" - 0 Error(s), 8 Warning(s).
 Load "Z:\\Desktop\\Project\\TX\\rtx_project\\keil\\obj\\output.axf" 
 Erase Done.
 Programming Done.
 Verify OK.
-has been cancelled
-h[2];
-..\tilt_thread.c(284): warning:  #111-D: statement is unreachable
-        return;
-..\tilt_thread.c(31): warning:  #550-D: variable "reset_flag" was set but never used
-  static int reset_flag=1;
-..\tilt_thread.c: 4 warnings, 0 errors
-linking...
-Program Size: Code=23492 RO-data=892 RW-data=184 ZI-data=8128  
-FromELF: creating hex file...
-".\obj\output.axf" - 0 Error(s), 13 Warning(s).

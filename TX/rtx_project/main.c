@@ -68,19 +68,19 @@ int main (void) {
 
 //Make thread active 
   tilt_thread = osThreadCreate(osThread(tilt_detection_thread),NULL);
-	tilt_transmit_thread = osThreadCreate(osThread(transmitTiltAngles), NULL);
-	//keypad_thread = osThreadCreate(osThread(thread_keypad), NULL);
-	void 
+	//tilt_transmit_thread = osThreadCreate(osThread(transmitTiltAngles), NULL);
+	keypad_thread = osThreadCreate(osThread(thread_keypad), NULL);
+	
 
 	wireless_spi_Init();
 
 	//----------------TX------------------------------
 	uint8_t readreg=0x00;
 	readreg = read_Status_Register(WIRELESS_STATUS_VERSION);
-	/*while(1){
+	while(1){
 		osDelay(osWaitForever);
 	}
-	*/
+	
 }
 static void set_mode1_signal(void){
 	int32_t signal;
@@ -138,8 +138,8 @@ void thread_keypad(void const *argument){
 				if (ch == 'A'){
 					printf("Enter mode 1 \n");
 					//mode2_thread_status = osThreadTerminate(tid_mode2);
-					//set_mode1_signal();
-//					tilt_transmit_thread = osThreadCreate(osThread(transmitTiltAngles),NULL);
+					set_mode1_signal();
+
 				}else if (ch == 'B'){
 					printf("Enter mode 2 \n");
 					mode1_thread_status = osThreadTerminate(tid_mode1);
