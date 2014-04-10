@@ -8,19 +8,16 @@ Project File Date:  04/09/2014
 
 <h2>Output:</h2>
 Build target 'Project'
-compiling mode2_thread.c...
-..\mode2_thread.h(1): warning:  #1-D: last line of file ends without a newline
+compiling main.c...
+../userbutton_config.h(4): warning:  #1-D: last line of file ends without a newline
+  void EXTI_NVIC_Config_PushButton(void);
+../mode2_thread.h(1): warning:  #1-D: last line of file ends without a newline
   void mode2_thread(void const *argument);
-..\mode2_thread.c(14): warning:  #1-D: last line of file ends without a newline
-  }
-..\mode2_thread.c: 2 warnings, 0 errors
-linking...
-Program Size: Code=23452 RO-data=892 RW-data=184 ZI-data=8128  
-FromELF: creating hex file...
-".\obj\output.axf" - 0 Error(s), 2 Warning(s).
-Load "Z:\\Desktop\\Project\\TX\\rtx_project\\keil\\obj\\output.axf" 
-Error: Flash Download failed  -  Target DLL has been cancelled
-e" was declared but never referenced
+../main.c(64): warning:  #550-D: variable "tilt_thread" was set but never used
+        osThreadId tilt_thread;
+../main.c(66): warning:  #177-D: variable "tid_thread1" was declared but never referenced
+        osThreadId tid_thread1;
+../main.c(67): warning:  #177-D: variable "GPIO_InitStructure" was declared but never referenced
         GPIO_InitTypeDef  GPIO_InitStructure;
 ../main.c(78): warning:  #550-D: variable "readreg" was set but never used
         uint8_t readreg=0x00;
@@ -30,10 +27,13 @@ e" was declared but never referenced
         int32_t signal;
 ../main.c: 8 warnings, 0 errors
 linking...
-Program Size: Code=23452 RO-data=892 RW-data=184 ZI-data=8128  
+Program Size: Code=23420 RO-data=892 RW-data=184 ZI-data=8128  
 FromELF: creating hex file...
 ".\obj\output.axf" - 0 Error(s), 8 Warning(s).
 Load "Z:\\Desktop\\Project\\TX\\rtx_project\\keil\\obj\\output.axf" 
 Erase Done.
 Programming Done.
 Verify OK.
+</pre>
+</body>
+</html>

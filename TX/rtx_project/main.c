@@ -137,7 +137,7 @@ void thread_keypad(void const *argument){
 			if (ch != 'v'){
 				if (ch == 'A'){
 					printf("Enter mode 1 \n");
-					//mode2_thread_status = osThreadTerminate(tid_mode2);
+					mode2_thread_status = osThreadTerminate(tid_mode2);
 					set_mode1_signal();
 
 				}else if (ch == 'B'){
