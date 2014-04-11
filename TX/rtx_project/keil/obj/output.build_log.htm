@@ -3,22 +3,32 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
-C:\Users\Gavin\Desktop\TX\rtx_project\keil\rtx.uvproj
+Z:\Desktop\Project\TX\rtx_project\keil\rtx.uvproj
 Project File Date:  04/10/2014
 
 <h2>Output:</h2>
 Build target 'Project'
-compiling main.c...
-../main.c(188): warning:  #177-D: variable "num" was declared but never referenced
-        int8_t num = -1;
-../main.c(189): warning:  #177-D: variable "k" was declared but never referenced
-        int8_t k = 0;;
-../main.c: 2 warnings, 0 errors
+compiling tilt_thread.c...
+..\temperature_thread.h(34): warning:  #1-D: last line of file ends without a newline
+  void Temperature_Tim_Interrupt(void);
+..\tilt_thread.c(57): warning:  #177-D: variable "transmitRollPitch" was declared but never referenced
+        int transmitRollPitch[2];
+..\tilt_thread.c(142): warning:  #177-D: variable "transmitRollPitch" was declared but never referenced
+        int transmitRollPitch[2];
+..\tilt_thread.c(149): warning:  #550-D: variable "tokentilt" was set but never used
+        uint32_t tokentilt;         // Return of semwait
+..\tilt_thread.c(218): warning:  #111-D: statement is unreachable
+        return;
+..\tilt_thread.c(35): warning:  #550-D: variable "reset_flag" was set but never used
+  static int reset_flag=1;
+..\tilt_thread.c(37): warning:  #550-D: variable "DisplayTiltFlag" was set but never used
+  static uint8_t DisplayTiltFlag = 1; // Flag gets turned on then in tilt mode
+..\tilt_thread.c: 7 warnings, 0 errors
 linking...
-Program Size: Code=22824 RO-data=920 RW-data=184 ZI-data=8128  
+Program Size: Code=24964 RO-data=916 RW-data=184 ZI-data=8128  
 FromELF: creating hex file...
-".\obj\output.axf" - 0 Error(s), 2 Warning(s).
-Load "C:\\Users\\Gavin\\Desktop\\TX\\rtx_project\\keil\\obj\\output.axf" 
+".\obj\output.axf" - 0 Error(s), 7 Warning(s).
+Load "Z:\\Desktop\\Project\\TX\\rtx_project\\keil\\obj\\output.axf" 
 Erase Done.
 Programming Done.
 Verify OK.

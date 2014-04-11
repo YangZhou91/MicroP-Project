@@ -12,7 +12,7 @@
 #include <MEM_Interrupt.h>
 //#include <SevenSegLED.h>
 #include "math.h"
-//#include "LCD_Impl.h"
+#include "LCD_Impl.h"
 #include "tilt_thread.h"
 //#include "PWM_Servo_Impl.h"
 #include "temperature_thread.h"
@@ -184,11 +184,21 @@ void tilt_DispFlag_thread(void const * argument)
 void transmitTiltAngles(void const * argument)
 {
 	int8_t transmitRollPitch[2];
+	char dispRoll[] = "Roll:";
+	char dispPitch[] = "Pitch";
+	char bufferRoll[9];
+	char bufferPitch[9];
 	
+	
+	LCD_clear_display();
+	LCD_DISPLAY_UPDATE_POS(0x80, dispRoll);
+	LCD_DISPLAY_UPDATE_POS(0xC0, dispPitch);
 	transmitGetID = osThreadGetId();
 	
 	while(1)
 	{
+		sprintf(bufferRoll, "%f", roll);
+	sprintf(bufferPitch, "%f", pitch);
 		osSignalWait(SIGNAL_TRANSMIT, osWaitForever);
 		
 		transmittingFlag=1;
@@ -197,6 +207,9 @@ void transmitTiltAngles(void const * argument)
 		transmitRollPitch[1] = pitch;
 		printf("%d ", transmitRollPitch[0]);
 		printf("%d\n", transmitRollPitch[1]);
+		LCD_Delay_Longer(LCD_WAIT_BETWEEN_DISPLAY);
+		LCD_DISPLAY_UPDATE_POS(0x85, bufferRoll);
+		LCD_DISPLAY_UPDATE_POS(0xC6, bufferPitch);
 		wirelessTransmit_TX(transmitRollPitch);
 		
 		transmittingFlag=0;

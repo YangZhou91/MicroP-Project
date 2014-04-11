@@ -292,6 +292,9 @@ void keypad(void const *argument){
 				}
 				if (mode == 'A'){
 				printf (">>>>>>>>Entering Mode_1 Real Time Tilting<<<<<<<<\n");
+				char mode1[7] = "Mode 1";
+				LCD_clear_display();
+				LCD_DISPLAY_UPDATE_POS(0x80, mode1);
 				wirelessTransmit_TX(mode_A);
 				
 				tilt_thread = osThreadCreate(osThread(tilt_detection_thread),NULL);
