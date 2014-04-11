@@ -260,12 +260,7 @@ void wirelessReceive_RX(uint8_t* rxBufferPtr)
 	//wait to reach IDLE state
 	statusRegRet = read_Status_Register(WIRELESS_STATUS_MARCSTATE);
 	statusRegRet &= maskMARCSTATE;
-//	while(1)
-//	{
-//		statusRegRet = read_Status_Register(WIRELESS_STATUS_MARCSTATE);
-//	  statusRegRet &= maskMARCSTATE;
-//		printf("IDLE status:%x\n", statusRegRet);
-//	}
+
 	while(statusRegRet != 0x01)
 	{
 		statusRegRet = read_Status_Register(WIRELESS_STATUS_MARCSTATE);
@@ -279,13 +274,7 @@ void wirelessReceive_RX(uint8_t* rxBufferPtr)
 	//wait to reach RX state
 	statusRegRet = read_Status_Register(WIRELESS_STATUS_MARCSTATE);
 	statusRegRet &= maskMARCSTATE;
-//	while(1)
-//	{
-//		printf("IDLE status:%x\n", statusRegRet);
-//		statusRegRet = read_Status_Register(WIRELESS_STATUS_MARCSTATE);
-//    statusRegRet &= maskMARCSTATE;
-//		//printf("Wait for IDLE state:%s\n", __FUNCTION__);
-//	}
+
 	while(statusRegRet != 0x01)
 	{
 		
@@ -302,30 +291,29 @@ void wirelessReceive_RX(uint8_t* rxBufferPtr)
 	
 	if (statusRegRet == 0x04)
 	{
-		printf("Num of bytes in RX FIFO:%x\n", statusRegRet);
+		//printf("Num of bytes in RX FIFO:%x\n", statusRegRet);
 
-		WIRELESS_SPI_Read(rxBufferPtr, WIRELESS_RXTX_FIFO, 4); 
-		
-//		int i=0;
-//		
-//		while(i < 4)
-//		{
-//			printf("Bytes in RX FIFO:%d, %d\n", i, rxBuffer[i]);
-//			i++;
-//		}
+		WIRELESS_SPI_Read(rxBufferPtr, WIRELESS_RXTX_FIFO,2); 
 	}
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	send_command_strobe(WIRELESS_STROBE_SFRX);
-//	while(statusRegRet != maskTxbytesBytesSent)
-//	{
-//		statusRegRet = read_Status_Register(WIRELESS_STATUS_RXBYTES);
-//	  statusRegRet &= maskTXBYTES;
-//	}
-
-	
-	
-	
 }
+
+
 void wireless_config_settings(void)
 {
 	uint8_t ctrl, setting;

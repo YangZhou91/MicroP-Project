@@ -534,6 +534,11 @@
               <FilePath>..\tilt_angle_calculation.h</FilePath>
             </File>
             <File>
+              <FileName>temperature_thread.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\temperature_thread.h</FilePath>
+            </File>
+            <File>
               <FileName>keypad.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\keypad.c</FilePath>
@@ -544,24 +549,14 @@
               <FilePath>..\keypad.h</FilePath>
             </File>
             <File>
-              <FileName>userbutton_config.c</FileName>
+              <FileName>LCD_Impl.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\userbutton_config.c</FilePath>
+              <FilePath>..\LCD_Impl.c</FilePath>
             </File>
             <File>
-              <FileName>userbutton_config.h</FileName>
+              <FileName>LCD_Impl.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\userbutton_config.h</FilePath>
-            </File>
-            <File>
-              <FileName>mode2_thread.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\mode2_thread.c</FilePath>
-            </File>
-            <File>
-              <FileName>mode2_thread.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\mode2_thread.h</FilePath>
+              <FilePath>..\LCD_Impl.h</FilePath>
             </File>
           </Files>
         </Group>

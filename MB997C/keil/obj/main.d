@@ -1,13 +1,13 @@
 .\obj\main.o: ../main.c
-.\obj\main.o: C:\Keil\ARM\CMSIS\Include\arm_math.h
-.\obj\main.o: C:\Keil\ARM\CMSIS\Include\core_cm4.h
-.\obj\main.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\obj\main.o: C:\Program Files\Keil\ARM\CMSIS\Include\arm_math.h
+.\obj\main.o: C:\Program Files\Keil\ARM\CMSIS\Include\core_cm4.h
+.\obj\main.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdint.h
 .\obj\main.o: ../inc/core_cmInstr.h
 .\obj\main.o: ../inc/core_cmFunc.h
 .\obj\main.o: ../inc/core_cm4_simd.h
-.\obj\main.o: C:\Keil\ARM\ARMCC\bin\..\include\string.h
-.\obj\main.o: C:\Keil\ARM\ARMCC\bin\..\include\math.h
-.\obj\main.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
+.\obj\main.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\string.h
+.\obj\main.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\math.h
+.\obj\main.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdio.h
 .\obj\main.o: ../CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 .\obj\main.o: ../inc/core_cm4.h
 .\obj\main.o: ../CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
@@ -40,7 +40,7 @@
 .\obj\main.o: ../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_wwdg.h
 .\obj\main.o: ../STM32F4xx_StdPeriph_Driver/inc/misc.h
 .\obj\main.o: ../inc/cmsis_os.h
-.\obj\main.o: C:\Keil\ARM\ARMCC\bin\..\include\stddef.h
+.\obj\main.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\stddef.h
 .\obj\main.o: ../wireless_spi_config.h
 .\obj\main.o: ../wireless_Impl.h
 .\obj\main.o: ..\keil\roll_motor.h

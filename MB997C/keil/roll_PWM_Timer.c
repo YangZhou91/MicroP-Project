@@ -1,6 +1,6 @@
 /**
   ******************************************************************************
-  * @file    roll_PWM_Timer.c
+  * @file    TIM3_Init.c
   * @author  yan ge and ruofan wu
   * @version V4.1.0
   * @date    28-FEB-2014
@@ -13,7 +13,7 @@
 #include "stm32f4xx.h"
 #include "stm32f4xx_conf.h"
 
-void roll_TIM3_init(){
+void TIM3_init(){
 	
 	uint16_t PrescalerValue = 0;
 	TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;

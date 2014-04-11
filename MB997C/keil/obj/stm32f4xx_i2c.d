@@ -2,7 +2,7 @@
 .\obj\stm32f4xx_i2c.o: ../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_i2c.h
 .\obj\stm32f4xx_i2c.o: ../CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 .\obj\stm32f4xx_i2c.o: ../inc/core_cm4.h
-.\obj\stm32f4xx_i2c.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\obj\stm32f4xx_i2c.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdint.h
 .\obj\stm32f4xx_i2c.o: ../inc/core_cmInstr.h
 .\obj\stm32f4xx_i2c.o: ../inc/core_cmFunc.h
 .\obj\stm32f4xx_i2c.o: ../inc/core_cm4_simd.h

@@ -689,7 +689,7 @@ void TIM_OC1Init(TIM_TypeDef* TIMx, TIM_OCInitTypeDef* TIM_OCInitStruct)
   /* Get the TIMx CCMR1 register value */
   tmpccmrx = TIMx->CCMR1;
     
-  /* Reset the Output Compare Mode Bits */
+//  /* Reset the Output Compare Mode Bits */
   tmpccmrx &= (uint16_t)~TIM_CCMR1_OC1M;
   tmpccmrx &= (uint16_t)~TIM_CCMR1_CC1S;
   /* Select the Output Compare Mode */

@@ -1,1 +1,0 @@
-void mode2_thread(void const *argument);

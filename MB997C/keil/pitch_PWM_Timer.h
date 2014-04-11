@@ -9,5 +9,5 @@
 
 #ifndef __PITCH_PWM_TIMER_H
 #define __PITCH_PWM_TIMER_H
-void pitch_TIM4_init(void);
+void TIM4_init(void);
 #endif

@@ -2,7 +2,7 @@
 .\obj\roll_motor.o: roll_motor.h
 .\obj\roll_motor.o: ../CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 .\obj\roll_motor.o: ../inc/core_cm4.h
-.\obj\roll_motor.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\obj\roll_motor.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdint.h
 .\obj\roll_motor.o: ../inc/core_cmInstr.h
 .\obj\roll_motor.o: ../inc/core_cmFunc.h
 .\obj\roll_motor.o: ../inc/core_cm4_simd.h
@@ -35,4 +35,4 @@
 .\obj\roll_motor.o: ../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_usart.h
 .\obj\roll_motor.o: ../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_wwdg.h
 .\obj\roll_motor.o: ../STM32F4xx_StdPeriph_Driver/inc/misc.h
-.\obj\roll_motor.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
+.\obj\roll_motor.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdio.h

@@ -36,3 +36,4 @@
 .\obj\wireless_impl.o: ../STM32F4xx_StdPeriph_Driver/inc/misc.h
 .\obj\wireless_impl.o: ..\wireless_spi_config.h
 .\obj\wireless_impl.o: ..\wireless_Impl.h
+.\obj\wireless_impl.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdio.h

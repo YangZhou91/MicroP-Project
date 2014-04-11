@@ -98,7 +98,7 @@ uint8_t WIRELESS_SPI_Write(uint8_t* pBuffer, uint8_t writeHeaderByte, uint16_t N
 uint8_t read_Status_Register(uint8_t regAddr);
 void send_command_strobe(uint8_t commandStrobeRegAddr);
 
-void wirelessTransmit_TX(float* angles);
+void wirelessTransmit_TX(int8_t* angles);
 void wirelessReceive_RX(void);
 
 uint32_t WIRELESS_SPI_TIMEOUT_UserCallback(void);

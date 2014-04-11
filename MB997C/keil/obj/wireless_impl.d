@@ -1,5 +1,5 @@
 .\obj\wireless_impl.o: ..\wireless_Impl.c
-.\obj\wireless_impl.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\obj\wireless_impl.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdint.h
 .\obj\wireless_impl.o: ../CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 .\obj\wireless_impl.o: ../inc/core_cm4.h
 .\obj\wireless_impl.o: ../inc/core_cmInstr.h

@@ -18,11 +18,15 @@
 #include "temperature_thread.h"
 #include "wireless_spi_config.h"
 #include "wireless_Impl.h"
+#include "string.h"
 
 //#define SIGNAL_DISP_TEMPERATURE 0x05 // signal sent to temperature thread
 int transmitFlag;
 int transmittingFlag=0; // 1-> When transmitting data, 0 otherwise
-extern	osThreadId temperature_TurnDispFlag_thread;
+
+char *message;
+
+
 
 void tilt_detection_thread(void const * argument);
 
@@ -50,19 +54,16 @@ void tilt_detection_thread(void const *argument)
 	reset_flag = 1;
 	roll = 0, pitch = 0;
 	
-	float transmitRollPitch[2];
+	int transmitRollPitch[2];
 	
 	set_Accelerometer_MEM();
-	//Delay(100);
+
 	
 	MEM_Interrupt_Config();
-	//Delay(100);
+
 	
 	EXTI_NVIC_Config();
-	//Delay(100);
-	
-	//PWM_Servo_config(); *****UNCOMMENTING THIS LINE CAUSES LINKING ERROR
-//	Delay(100);
+
 	
 	tiltGetId = osThreadGetId();
 	
@@ -119,87 +120,26 @@ void tilt_detection_thread(void const *argument)
 		get_calibration_data(filtered_data, calibrated_data);
 	
 		// Calculate roll and pitch
-		roll = calculate_roll(calibrated_data);
-		pitch = calculate_pitch(calibrated_data);
+		roll = (int8_t)calculate_roll(calibrated_data);
+		pitch = (int8_t)calculate_pitch(calibrated_data);
 	
-		// if tilt mode on the call PWM_Display to adjust the CCR for PWM servo 
-
-		if (DisplayTiltFlag == 1)
-		{	
-//			transmitRollPitch[0] = roll;
-//			transmitRollPitch[1] = pitch;
-//			printf("Roll_TX:%f\n", transmitRollPitch[0]);
-//			printf("Pitch_TX:%f\n", transmitRollPitch[1]);
-//			wirelessTransmit_TX(transmitRollPitch);
-//		 printf("Roll:%f\n", roll);
-//		 printf("Pitch:%f\n", pitch);
-		 //PWM_Display(roll); *****DONT NEED IN THIS CARD
-		}
 		if (transmittingFlag == 0)
 		{
 			osSignalSet(transmitGetID, SIGNAL_TRANSMIT);
 		}
-//		else
-//			printf("Waiting for transmission to end.\n");
-		
+	
 		LIS302DL_ReadACC(raw_data);
-		//transmitFlag=1;
-		
 	}
 }
-
-
-/*
- * Function: LCD_DisplayTiltAngle
- * ----------------------------
- * Display the tilt in LCD
- * Calls LCD API
- *
- *   @param_1: float roll
- *   @param_2: float pitch
- *   returns: void
- */
-//void LCD_DisplayTiltAngle(float roll, float pitch)
-//{
-//	
-//	char dispRoll[] = "Roll:";
-//	char dispPitch[] = "Pitch:";
-//	char bufferRoll[9];
-//	char bufferPitch[9];
-//	
-//	// converts roll and pitch from float to character string 
-//	sprintf(bufferRoll,"%f", roll);
-//	sprintf(bufferPitch,"%f", pitch);
-//	
-//	// Flag that display the string "Roll" and "Pitch" once every mode change
-//	if (GLB_TiltAngle_RollPitch_display_flag)
-//	{
-//		LCD_clear_display();
-//		LCD_Delay_Longer(LCD_WAIT_BETWEEN_DISPLAY);
-//		
-//		// displays the string "Roll" and "Pitch" once every mode change in first and second line
-//	  LCD_DISPLAY_UPDATE_POS(0x80, dispRoll);
-//		LCD_DISPLAY_UPDATE_POS(0xC0, dispPitch);
-//	  
-//		GLB_TiltAngle_RollPitch_display_flag=0;
-//	}
-//	
-//	// wait between every display
-//	LCD_Delay_Longer(LCD_WAIT_BETWEEN_DISPLAY);
-//	LCD_DISPLAY_UPDATE_POS(0x85, bufferRoll);
-//	LCD_DISPLAY_UPDATE_POS(0xC6, bufferPitch);
-//	
-//}
 
 /*!
  @brief Thread to display tilt angles
  @param argument Unused
 */
-/*
 void tilt_DispFlag_thread(void const * argument)
 {
 	//uint8_t transmitRoll, transmitPitch; 
-	float transmitRollPitch[2];
+	int transmitRollPitch[2];
 	// Extracts the semaphore object from the argument.
 	// This semaphore object was created in the main
 	osSemaphoreId* semaphore;
@@ -222,23 +162,6 @@ void tilt_DispFlag_thread(void const * argument)
 			event = osSignalWait(SIGNAL_DISP_TILT, 1);
 			if (event.status == osEventTimeout)
 			{
-				// in case of timeout display
-				//LCD_DisplayTiltAngle(roll, pitch);    *****DONT NEED IN THIS CARD
-				if (transmitFlag)
-				{
-//					transmitRollPitch[0] = roll;
-//					transmitRollPitch[1] = pitch;
-//					printf("Roll_TX:%f\n", transmitRollPitch[0]);
-//					printf("Pitch_TX:%f\n", transmitRollPitch[1]);
-//					wirelessTransmit_TX(transmitRollPitch);
-				}
-			}
-			else
-			{
-				// signal received which is not timeout
-				// clear the signal flag for the temperature display thread
-				osSignalClear (temperature_TurnDispFlag_thread, SIGNAL_DISP_TEMPERATURE);
-				
 				// turn the resource_locked flag off
 				ResourceLocked = 0;
 				DisplayTiltFlag = 0;
@@ -257,25 +180,23 @@ void tilt_DispFlag_thread(void const * argument)
 	}
 
 }
-*/
 
 void transmitTiltAngles(void const * argument)
 {
-
-	float transmitRollPitch[2];
+	int8_t transmitRollPitch[2];
 	
 	transmitGetID = osThreadGetId();
 	
 	while(1)
 	{
-		//osSignalWait(SIGNAL_TRANSMIT, osWaitForever);
+		osSignalWait(SIGNAL_TRANSMIT, osWaitForever);
 		
-		//transmittingFlag=1;
+		transmittingFlag=1;
 		
 		transmitRollPitch[0] = roll;
 		transmitRollPitch[1] = pitch;
-		printf("Roll_TX:%f\n", transmitRollPitch[0]);
-//		printf("Pitch_TX:%f\n", transmitRollPitch[1]);
+		printf("%d ", transmitRollPitch[0]);
+		printf("%d\n", transmitRollPitch[1]);
 		wirelessTransmit_TX(transmitRollPitch);
 		
 		transmittingFlag=0;
@@ -283,6 +204,73 @@ void transmitTiltAngles(void const * argument)
 	
 	return;
 }
+
+
+void sendSequence(char* seq){
+	extern char *message;
+	message = seq;
+	printf ("sendSequence: %s\n", message);
+	
+		int size = strlen(message);
+	
+	printf ("size : %d",size);
+	int8_t transmit[2];
+	transmitGetID = osThreadGetId();
+//	while(1)
+//	{
+		//osSignalWait(SIGNAL_TRANSMIT, osWaitForever);
+		
+		transmittingFlag=1;
+
+		for (int i = 0; i < size; i += 2){
+			transmit[0] = (int8_t)message[i];
+			transmit[1] = (int8_t)message[i+1];
+			printf("transmit>>>> %s\n", transmit);
+			wirelessTransmit_TX(transmit);
+		}
+		transmittingFlag=0;
+}
+
+
+
+
+
+
+//void transmitSequence(void const * argument){
+//	
+////	extern char *message;
+//	printf("Enter transmitSequence....\n");
+//	printf ("message: %s\n", message);
+//	
+//	
+//	int size = strlen(message);
+//	
+//	printf ("size : %d",size);
+//	int8_t transmit[2];
+//	transmitGetID = osThreadGetId();
+////	while(1)
+////	{
+//		//osSignalWait(SIGNAL_TRANSMIT, osWaitForever);
+//		
+//		transmittingFlag=1;
+
+//		for (int i = 0; i < size; i += 2){
+//			transmit[0] = (int8_t)message[i];
+//			transmit[1] = (int8_t)message[i+1];
+//			printf("transmit>>>> %s\n", transmit);
+//			wirelessTransmit_TX(transmit);
+//		}
+//		transmittingFlag=0;
+////	}
+//	
+//	return;
+//}
+
+
+
+
+
+
 
 void EXTI1_IRQHandler(void)
 {

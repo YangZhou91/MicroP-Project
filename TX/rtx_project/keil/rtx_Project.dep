@@ -34,14 +34,14 @@ I (../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_tim.h)(0x4F551E30)
 I (../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_usart.h)(0x4F551E30)
 I (../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_wwdg.h)(0x4F551E30)
 I (../STM32F4xx_StdPeriph_Driver/inc/misc.h)(0x4F551E30)
-F (../startup_stm32f4xx.s)(0x5340AAC4)(--cpu Cortex-M4.fp --li --pd "__RTX SETA 1" --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I "C:\Program Files\Keil\ARM\RV31\INC"-I "C:\Program Files\Keil\ARM\CMSIS\Include"-o .\obj\startup_stm32f4xx.o --depend .\obj\startup_stm32f4xx.d)
-F (../RTX_Conf_CM.c)(0x5337A222)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB --li -g -O0 --apcs=interwork -I../ -I../rtx_cmsis -I../inc -I../CMSIS/Device/ST/STM32F4xx/Include -I../STM32F4xx_StdPeriph_Driver/inc --c99-I "C:\Program Files\Keil\ARM\RV31\INC"-I "C:\Program Files\Keil\ARM\CMSIS\Include"-D__FPU_PRESENT="1" -DSTM32F4XX -DUSE_STDPERIPH_DRIVER="1" -DHSE_VALUE="8000000" -DARM_MATH_CM4="1" -o .\obj\rtx_conf_cm.o --omf_browse .\obj\rtx_conf_cm.crf --depend .\obj\rtx_conf_cm.d)
+F (../startup_stm32f4xx.s)(0x5346EF9D)(--cpu Cortex-M4.fp --li --pd "__RTX SETA 1" --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I "C:\Program Files\Keil\ARM\RV31\INC"-I "C:\Program Files\Keil\ARM\CMSIS\Include"-o .\obj\startup_stm32f4xx.o --depend .\obj\startup_stm32f4xx.d)
+F (../RTX_Conf_CM.c)(0x5345E688)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB --li -g -O0 --apcs=interwork -I../ -I../rtx_cmsis -I../inc -I../CMSIS/Device/ST/STM32F4xx/Include -I../STM32F4xx_StdPeriph_Driver/inc --c99-I "C:\Program Files\Keil\ARM\RV31\INC"-I "C:\Program Files\Keil\ARM\CMSIS\Include"-D__FPU_PRESENT="1" -DSTM32F4XX -DUSE_STDPERIPH_DRIVER="1" -DHSE_VALUE="8000000" -DARM_MATH_CM4="1" -o .\obj\rtx_conf_cm.o --omf_browse .\obj\rtx_conf_cm.crf --depend .\obj\rtx_conf_cm.d)
 I (../inc/cmsis_os.h)(0x4F47F72E)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x51C86E14)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x51C86E14)
 I (../inc/RTX_CM_lib.h)(0x4F47F72E)
 F (../rtx_lib/ARM/RTX_CM4.lib)(0x4F47F72A)()
-F (../main.c)(0x53461870)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB --li -g -O0 --apcs=interwork -I../ -I../rtx_cmsis -I../inc -I../CMSIS/Device/ST/STM32F4xx/Include -I../STM32F4xx_StdPeriph_Driver/inc --c99-I "C:\Program Files\Keil\ARM\RV31\INC"-I "C:\Program Files\Keil\ARM\CMSIS\Include"-D__FPU_PRESENT="1" -DSTM32F4XX -DUSE_STDPERIPH_DRIVER="1" -DHSE_VALUE="8000000" -DARM_MATH_CM4="1" -o .\obj\main.o --omf_browse .\obj\main.crf --depend .\obj\main.d)
+F (../main.c)(0x53474844)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB --li -g -O0 --apcs=interwork -I../ -I../rtx_cmsis -I../inc -I../CMSIS/Device/ST/STM32F4xx/Include -I../STM32F4xx_StdPeriph_Driver/inc --c99-I "C:\Program Files\Keil\ARM\RV31\INC"-I "C:\Program Files\Keil\ARM\CMSIS\Include"-D__FPU_PRESENT="1" -DSTM32F4XX -DUSE_STDPERIPH_DRIVER="1" -DHSE_VALUE="8000000" -DARM_MATH_CM4="1" -o .\obj\main.o --omf_browse .\obj\main.crf --depend .\obj\main.d)
 I (C:\Program Files\Keil\ARM\CMSIS\Include\arm_math.h)(0x520A5E00)
 I (C:\Program Files\Keil\ARM\CMSIS\Include\core_cm4.h)(0x520A5E02)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x51C86E14)
@@ -84,13 +84,12 @@ I (../inc/cmsis_os.h)(0x4F47F72E)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x51C86E14)
 I (../stm32f4_discovery_lis302dl.h)(0x5329E986)
 I (../wireless_spi_config.h)(0x533D7962)
-I (../wireless_Impl.h)(0x53388C88)
-I (../tilt_thread.h)(0x533CAD82)
-I (../keypad.h)(0x5340A77C)
+I (../wireless_Impl.h)(0x534628EE)
+I (../tilt_thread.h)(0x5346C100)
+I (../keypad.h)(0x5346AE6B)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdio.h)(0x51C86E14)
 I (C:\Program Files\Keil\ARM\ARMCC\include\inttypes.h)(0x51C86E14)
-I (../userbutton_config.h)(0x53445EC6)
-I (../mode2_thread.h)(0x5345C4DD)
+I (../LCD_Impl.h)(0x532C55E8)
 F (..\fputc_debug.c)(0x52E6B6D2)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB --li -g -O0 --apcs=interwork -I../ -I../rtx_cmsis -I../inc -I../CMSIS/Device/ST/STM32F4xx/Include -I../STM32F4xx_StdPeriph_Driver/inc --c99-I "C:\Program Files\Keil\ARM\RV31\INC"-I "C:\Program Files\Keil\ARM\CMSIS\Include"-D__FPU_PRESENT="1" -DSTM32F4XX -DUSE_STDPERIPH_DRIVER="1" -DHSE_VALUE="8000000" -DARM_MATH_CM4="1" -o .\obj\fputc_debug.o --omf_browse .\obj\fputc_debug.crf --depend .\obj\fputc_debug.d)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdio.h)(0x51C86E14)
 I (C:\Program Files\Keil\ARM\ARMCC\include\rt_misc.h)(0x51C86E14)
@@ -128,7 +127,7 @@ I (../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_tim.h)(0x4F551E30)
 I (../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_usart.h)(0x4F551E30)
 I (../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_wwdg.h)(0x4F551E30)
 I (../STM32F4xx_StdPeriph_Driver/inc/misc.h)(0x4F551E30)
-F (..\wireless_Impl.c)(0x5344546E)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB --li -g -O0 --apcs=interwork -I../ -I../rtx_cmsis -I../inc -I../CMSIS/Device/ST/STM32F4xx/Include -I../STM32F4xx_StdPeriph_Driver/inc --c99-I "C:\Program Files\Keil\ARM\RV31\INC"-I "C:\Program Files\Keil\ARM\CMSIS\Include"-D__FPU_PRESENT="1" -DSTM32F4XX -DUSE_STDPERIPH_DRIVER="1" -DHSE_VALUE="8000000" -DARM_MATH_CM4="1" -o .\obj\wireless_impl.o --omf_browse .\obj\wireless_impl.crf --depend .\obj\wireless_impl.d)
+F (..\wireless_Impl.c)(0x5346C30E)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB --li -g -O0 --apcs=interwork -I../ -I../rtx_cmsis -I../inc -I../CMSIS/Device/ST/STM32F4xx/Include -I../STM32F4xx_StdPeriph_Driver/inc --c99-I "C:\Program Files\Keil\ARM\RV31\INC"-I "C:\Program Files\Keil\ARM\CMSIS\Include"-D__FPU_PRESENT="1" -DSTM32F4XX -DUSE_STDPERIPH_DRIVER="1" -DHSE_VALUE="8000000" -DARM_MATH_CM4="1" -o .\obj\wireless_impl.o --omf_browse .\obj\wireless_impl.crf --depend .\obj\wireless_impl.d)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x51C86E14)
 I (../CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x4F55249C)
 I (../inc/core_cm4.h)(0x4F47F72C)
@@ -164,9 +163,10 @@ I (../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_usart.h)(0x4F551E30)
 I (../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_wwdg.h)(0x4F551E30)
 I (../STM32F4xx_StdPeriph_Driver/inc/misc.h)(0x4F551E30)
 I (..\wireless_spi_config.h)(0x533D7962)
-I (..\wireless_Impl.h)(0x53388C88)
-F (..\wireless_Impl.h)(0x53388C88)()
-F (..\wireless_spi_config.c)(0x533D7996)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB --li -g -O0 --apcs=interwork -I../ -I../rtx_cmsis -I../inc -I../CMSIS/Device/ST/STM32F4xx/Include -I../STM32F4xx_StdPeriph_Driver/inc --c99-I "C:\Program Files\Keil\ARM\RV31\INC"-I "C:\Program Files\Keil\ARM\CMSIS\Include"-D__FPU_PRESENT="1" -DSTM32F4XX -DUSE_STDPERIPH_DRIVER="1" -DHSE_VALUE="8000000" -DARM_MATH_CM4="1" -o .\obj\wireless_spi_config.o --omf_browse .\obj\wireless_spi_config.crf --depend .\obj\wireless_spi_config.d)
+I (..\wireless_Impl.h)(0x534628EE)
+I (C:\Program Files\Keil\ARM\ARMCC\include\stdio.h)(0x51C86E14)
+F (..\wireless_Impl.h)(0x534628EE)()
+F (..\wireless_spi_config.c)(0x5345C0AC)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB --li -g -O0 --apcs=interwork -I../ -I../rtx_cmsis -I../inc -I../CMSIS/Device/ST/STM32F4xx/Include -I../STM32F4xx_StdPeriph_Driver/inc --c99-I "C:\Program Files\Keil\ARM\RV31\INC"-I "C:\Program Files\Keil\ARM\CMSIS\Include"-D__FPU_PRESENT="1" -DSTM32F4XX -DUSE_STDPERIPH_DRIVER="1" -DHSE_VALUE="8000000" -DARM_MATH_CM4="1" -o .\obj\wireless_spi_config.o --omf_browse .\obj\wireless_spi_config.crf --depend .\obj\wireless_spi_config.d)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x51C86E14)
 I (../CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x4F55249C)
 I (../inc/core_cm4.h)(0x4F47F72C)
@@ -290,7 +290,7 @@ I (C:\Program Files\Keil\ARM\ARMCC\include\stdio.h)(0x51C86E14)
 I (../MovingAverageFilter.h)(0x532C5986)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x51C86E14)
 F (..\MovingAverageFilter.h)(0x532C5986)()
-F (..\tilt_thread.c)(0x5345F8C7)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB --li -g -O0 --apcs=interwork -I../ -I../rtx_cmsis -I../inc -I../CMSIS/Device/ST/STM32F4xx/Include -I../STM32F4xx_StdPeriph_Driver/inc --c99-I "C:\Program Files\Keil\ARM\RV31\INC"-I "C:\Program Files\Keil\ARM\CMSIS\Include"-D__FPU_PRESENT="1" -DSTM32F4XX -DUSE_STDPERIPH_DRIVER="1" -DHSE_VALUE="8000000" -DARM_MATH_CM4="1" -o .\obj\tilt_thread.o --omf_browse .\obj\tilt_thread.crf --depend .\obj\tilt_thread.d)
+F (..\tilt_thread.c)(0x5346E511)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB --li -g -O0 --apcs=interwork -I../ -I../rtx_cmsis -I../inc -I../CMSIS/Device/ST/STM32F4xx/Include -I../STM32F4xx_StdPeriph_Driver/inc --c99-I "C:\Program Files\Keil\ARM\RV31\INC"-I "C:\Program Files\Keil\ARM\CMSIS\Include"-D__FPU_PRESENT="1" -DSTM32F4XX -DUSE_STDPERIPH_DRIVER="1" -DHSE_VALUE="8000000" -DARM_MATH_CM4="1" -o .\obj\tilt_thread.o --omf_browse .\obj\tilt_thread.crf --depend .\obj\tilt_thread.d)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdio.h)(0x51C86E14)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdlib.h)(0x51C86E14)
 I (../inc/cmsis_os.h)(0x4F47F72E)
@@ -337,11 +337,12 @@ I (..\tilt_angle_calculation.h)(0x5329E986)
 I (..\MovingAverageFilter.h)(0x532C5986)
 I (../MEM_Interrupt.h)(0x5329E986)
 I (C:\Program Files\Keil\ARM\ARMCC\include\math.h)(0x51C86E14)
-I (..\tilt_thread.h)(0x533CAD82)
+I (..\tilt_thread.h)(0x5346C100)
 I (..\temperature_thread.h)(0x532F8B9E)
 I (..\wireless_spi_config.h)(0x533D7962)
-I (..\wireless_Impl.h)(0x53388C88)
-F (..\tilt_thread.h)(0x533CAD82)()
+I (..\wireless_Impl.h)(0x534628EE)
+I (C:\Program Files\Keil\ARM\ARMCC\include\string.h)(0x51C86E14)
+F (..\tilt_thread.h)(0x5346C100)()
 F (..\accelerometer_conf.c)(0x532B2282)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB --li -g -O0 --apcs=interwork -I../ -I../rtx_cmsis -I../inc -I../CMSIS/Device/ST/STM32F4xx/Include -I../STM32F4xx_StdPeriph_Driver/inc --c99-I "C:\Program Files\Keil\ARM\RV31\INC"-I "C:\Program Files\Keil\ARM\CMSIS\Include"-D__FPU_PRESENT="1" -DSTM32F4XX -DUSE_STDPERIPH_DRIVER="1" -DHSE_VALUE="8000000" -DARM_MATH_CM4="1" -o .\obj\accelerometer_conf.o --omf_browse .\obj\accelerometer_conf.crf --depend .\obj\accelerometer_conf.d)
 I (..\stm32f4_discovery_lis302dl.h)(0x5329E986)
 I (../CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x4F55249C)
@@ -388,7 +389,8 @@ I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x51C86E14)
 I (../tilt_angle_calculation.h)(0x5329E986)
 I (C:\Program Files\Keil\ARM\ARMCC\include\math.h)(0x51C86E14)
 F (..\tilt_angle_calculation.h)(0x5329E986)()
-F (..\keypad.c)(0x5340AF00)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB --li -g -O0 --apcs=interwork -I../ -I../rtx_cmsis -I../inc -I../CMSIS/Device/ST/STM32F4xx/Include -I../STM32F4xx_StdPeriph_Driver/inc --c99-I "C:\Program Files\Keil\ARM\RV31\INC"-I "C:\Program Files\Keil\ARM\CMSIS\Include"-D__FPU_PRESENT="1" -DSTM32F4XX -DUSE_STDPERIPH_DRIVER="1" -DHSE_VALUE="8000000" -DARM_MATH_CM4="1" -o .\obj\keypad.o --omf_browse .\obj\keypad.crf --depend .\obj\keypad.d)
+F (..\temperature_thread.h)(0x532F8B9E)()
+F (..\keypad.c)(0x5346E9BA)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB --li -g -O0 --apcs=interwork -I../ -I../rtx_cmsis -I../inc -I../CMSIS/Device/ST/STM32F4xx/Include -I../STM32F4xx_StdPeriph_Driver/inc --c99-I "C:\Program Files\Keil\ARM\RV31\INC"-I "C:\Program Files\Keil\ARM\CMSIS\Include"-D__FPU_PRESENT="1" -DSTM32F4XX -DUSE_STDPERIPH_DRIVER="1" -DHSE_VALUE="8000000" -DARM_MATH_CM4="1" -o .\obj\keypad.o --omf_browse .\obj\keypad.crf --depend .\obj\keypad.d)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdio.h)(0x51C86E14)
 I (C:\Program Files\Keil\ARM\ARMCC\include\math.h)(0x51C86E14)
 I (C:\Program Files\Keil\ARM\ARMCC\include\inttypes.h)(0x51C86E14)
@@ -428,12 +430,13 @@ I (../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_wwdg.h)(0x4F551E30)
 I (../STM32F4xx_StdPeriph_Driver/inc/misc.h)(0x4F551E30)
 I (../inc/cmsis_os.h)(0x4F47F72E)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x51C86E14)
-I (..\keypad.h)(0x5340A77C)
-F (..\keypad.h)(0x5340A77C)()
-F (..\userbutton_config.c)(0x53445EDF)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB --li -g -O0 --apcs=interwork -I../ -I../rtx_cmsis -I../inc -I../CMSIS/Device/ST/STM32F4xx/Include -I../STM32F4xx_StdPeriph_Driver/inc --c99-I "C:\Program Files\Keil\ARM\RV31\INC"-I "C:\Program Files\Keil\ARM\CMSIS\Include"-D__FPU_PRESENT="1" -DSTM32F4XX -DUSE_STDPERIPH_DRIVER="1" -DHSE_VALUE="8000000" -DARM_MATH_CM4="1" -o .\obj\userbutton_config.o --omf_browse .\obj\userbutton_config.crf --depend .\obj\userbutton_config.d)
+I (..\keypad.h)(0x5346AE6B)
+F (..\keypad.h)(0x5346AE6B)()
+F (..\LCD_Impl.c)(0x53475F3F)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB --li -g -O0 --apcs=interwork -I../ -I../rtx_cmsis -I../inc -I../CMSIS/Device/ST/STM32F4xx/Include -I../STM32F4xx_StdPeriph_Driver/inc --c99-I "C:\Program Files\Keil\ARM\RV31\INC"-I "C:\Program Files\Keil\ARM\CMSIS\Include"-D__FPU_PRESENT="1" -DSTM32F4XX -DUSE_STDPERIPH_DRIVER="1" -DHSE_VALUE="8000000" -DARM_MATH_CM4="1" -o .\obj\lcd_impl.o --omf_browse .\obj\lcd_impl.crf --depend .\obj\lcd_impl.d)
+I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x51C86E14)
+I (C:\Program Files\Keil\ARM\ARMCC\include\stdio.h)(0x51C86E14)
 I (../CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x4F55249C)
 I (../inc/core_cm4.h)(0x4F47F72C)
-I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x51C86E14)
 I (../inc/core_cmInstr.h)(0x4F47F72E)
 I (../inc/core_cmFunc.h)(0x4F47F72E)
 I (../inc/core_cm4_simd.h)(0x4F47F72E)
@@ -465,15 +468,8 @@ I (../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_tim.h)(0x4F551E30)
 I (../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_usart.h)(0x4F551E30)
 I (../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_wwdg.h)(0x4F551E30)
 I (../STM32F4xx_StdPeriph_Driver/inc/misc.h)(0x4F551E30)
-F (..\userbutton_config.h)(0x53445EC6)()
-F (..\mode2_thread.c)(0x534617D1)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB --li -g -O0 --apcs=interwork -I../ -I../rtx_cmsis -I../inc -I../CMSIS/Device/ST/STM32F4xx/Include -I../STM32F4xx_StdPeriph_Driver/inc --c99-I "C:\Program Files\Keil\ARM\RV31\INC"-I "C:\Program Files\Keil\ARM\CMSIS\Include"-D__FPU_PRESENT="1" -DSTM32F4XX -DUSE_STDPERIPH_DRIVER="1" -DHSE_VALUE="8000000" -DARM_MATH_CM4="1" -o .\obj\mode2_thread.o --omf_browse .\obj\mode2_thread.crf --depend .\obj\mode2_thread.d)
-I (C:\Program Files\Keil\ARM\ARMCC\include\stdio.h)(0x51C86E14)
-I (C:\Program Files\Keil\ARM\ARMCC\include\stdlib.h)(0x51C86E14)
-I (..\mode2_thread.h)(0x5345C4DD)
-I (../inc/cmsis_os.h)(0x4F47F72E)
-I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x51C86E14)
-I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x51C86E14)
-F (..\mode2_thread.h)(0x5345C4DD)()
+I (..\LCD_Impl.h)(0x532C55E8)
+F (..\LCD_Impl.h)(0x532C55E8)()
 F (..\STM32F4xx_StdPeriph_Driver\src\misc.c)(0x4F551E30)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB --li -g -O0 --apcs=interwork -I../ -I../rtx_cmsis -I../inc -I../CMSIS/Device/ST/STM32F4xx/Include -I../STM32F4xx_StdPeriph_Driver/inc --c99-I "C:\Program Files\Keil\ARM\RV31\INC"-I "C:\Program Files\Keil\ARM\CMSIS\Include"-D__FPU_PRESENT="1" -DSTM32F4XX -DUSE_STDPERIPH_DRIVER="1" -DHSE_VALUE="8000000" -DARM_MATH_CM4="1" -o .\obj\misc.o --omf_browse .\obj\misc.crf --depend .\obj\misc.d)
 I (../STM32F4xx_StdPeriph_Driver/inc/misc.h)(0x4F551E30)
 I (../CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x4F55249C)
@@ -1384,7 +1380,7 @@ I (../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_tim.h)(0x4F551E30)
 I (../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_usart.h)(0x4F551E30)
 I (../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_wwdg.h)(0x4F551E30)
 I (../STM32F4xx_StdPeriph_Driver/inc/misc.h)(0x4F551E30)
-F (..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.c)(0x4F551E32)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB --li -g -O0 --apcs=interwork -I../ -I../rtx_cmsis -I../inc -I../CMSIS/Device/ST/STM32F4xx/Include -I../STM32F4xx_StdPeriph_Driver/inc --c99-I "C:\Program Files\Keil\ARM\RV31\INC"-I "C:\Program Files\Keil\ARM\CMSIS\Include"-D__FPU_PRESENT="1" -DSTM32F4XX -DUSE_STDPERIPH_DRIVER="1" -DHSE_VALUE="8000000" -DARM_MATH_CM4="1" -o .\obj\stm32f4xx_spi.o --omf_browse .\obj\stm32f4xx_spi.crf --depend .\obj\stm32f4xx_spi.d)
+F (..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.c)(0x5346C2C7)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB --li -g -O0 --apcs=interwork -I../ -I../rtx_cmsis -I../inc -I../CMSIS/Device/ST/STM32F4xx/Include -I../STM32F4xx_StdPeriph_Driver/inc --c99-I "C:\Program Files\Keil\ARM\RV31\INC"-I "C:\Program Files\Keil\ARM\CMSIS\Include"-D__FPU_PRESENT="1" -DSTM32F4XX -DUSE_STDPERIPH_DRIVER="1" -DHSE_VALUE="8000000" -DARM_MATH_CM4="1" -o .\obj\stm32f4xx_spi.o --omf_browse .\obj\stm32f4xx_spi.crf --depend .\obj\stm32f4xx_spi.d)
 I (../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_spi.h)(0x4F551E30)
 I (../CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x4F55249C)
 I (../inc/core_cm4.h)(0x4F47F72C)

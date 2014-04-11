@@ -6,10 +6,6 @@
 #include "misc.h"
 #include "wireless_spi_config.h"
 #include "stm32f4xx_rcc.h"
-//#include "stm32f4xx_it.h"
-
-
-
 
 void wireless_spi_config(void) 
 {
@@ -76,7 +72,6 @@ void wireless_spi_config(void)
   GPIO_Init(WIRELESS_SPI_CONFIG_CS_GPIO_PORT, &SPI_GPIO_InitStruct);
 
   // Deselect : Chip Select high 
-  //GPIO_SetBits(WIRELESS_SPI_CONFIG_CS_GPIO_PORT, WIRELESS_SPI_CONFIG_CS_PIN);
   WIRELESS_SPI_CS_HIGH();	
 }
 

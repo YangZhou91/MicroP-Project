@@ -1,6 +1,6 @@
 /**
   ******************************************************************************
-  * @file    pitch_PWM_Timer.c
+  * @file    TIM4_Init.c
   * @author  yan ge and ruofan wu
   * @version V4.1.0
   * @date    28-FEB-2014
@@ -14,7 +14,7 @@
 #include "stm32f4xx_conf.h"
 
 
-void pitch_TIM4_init(){
+void TIM4_init(){
 	uint16_t PrescalerValue = 0;
 	TIM_TimeBaseInitTypeDef  TIM_Tim4BaseStructure;
 	GPIO_InitTypeDef GPIO_InitStructure;

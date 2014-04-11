@@ -4,6 +4,5 @@ void keypad_column_init(void);
 void keypad_row_init(void);
 int readKeyColumn(void);
 int readKeyRow(void);
-int read_keypad(int, int);
-char read_symble(int, int);
+char read_keypad(int8_t, int8_t);
 #endif

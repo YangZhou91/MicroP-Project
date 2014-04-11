@@ -10,5 +10,5 @@
 #include "stm32f4xx.h"
 #ifndef __ROLL_MOTOR_H
 #define __ROLL_MOTOR_H
-void roll_motor(int);
+void roll_pwm(int);
 #endif

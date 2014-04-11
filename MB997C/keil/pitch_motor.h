@@ -10,5 +10,5 @@
 #include "stm32f4xx.h"
 #ifndef __PITCH_MOTOR_H
 #define __PITCH_MOTOR_H
-void pitch_motor(int);
+void pitch_pwm(int);
 #endif

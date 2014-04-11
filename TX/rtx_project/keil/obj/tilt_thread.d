@@ -50,3 +50,4 @@
 .\obj\tilt_thread.o: ..\temperature_thread.h
 .\obj\tilt_thread.o: ..\wireless_spi_config.h
 .\obj\tilt_thread.o: ..\wireless_Impl.h
+.\obj\tilt_thread.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\string.h

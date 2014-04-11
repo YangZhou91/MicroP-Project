@@ -9,5 +9,5 @@
 
 #ifndef __ROLL_PWM_TIMER_H
 #define __ROLL_PWM_TIMER_H
-void roll_TIM3_init(void);
+void TIM3_init(void);
 #endif

@@ -7,6 +7,7 @@
 #include "wireless_spi_config.h"
 #include "wireless_Impl.h"
 #include "stm32f4xx_rcc.h"
+#include "stdio.h"
 
 /** @defgroup STM32F4_DISCOVERY_LIS302DL_Private_Defines
   * @{
@@ -181,22 +182,20 @@ uint32_t WIRELESS_SPI_TIMEOUT_UserCallback(void)
   //}
 }
 
+
+
+
 #endif /* USE_DEFAULT_TIMEOUT_CALLBACK */
 
-void wirelessTransmit_TX(float* angles)
+void wirelessTransmit_TX(int8_t* angles)
 {
 	uint8_t roll, pitch, maskMARCSTATE = 0x1F, maskTXBYTES = 0x7F, maskTxbytesBytesSent = SMARTRF_SETTING_PKTLEN, statusRegRet;
-	int8_t signOffsetBuffer[2];
-	uint8_t txBuffer[2]; 
 	
-	signOffsetBuffer[0] = (int8_t)angles[0];
-	signOffsetBuffer[1] = (int8_t)angles[1];
+		uint8_t txBuffer[2]; 
 	
-
 		txBuffer[0] = (int8_t)angles[0];
 		
 		txBuffer[1] = (int8_t)angles[1];
-	
 	
 	//Go to IDLE state
 	send_command_strobe(WIRELESS_STROBE_SIDLE);
@@ -222,24 +221,18 @@ void wirelessTransmit_TX(float* angles)
 	  statusRegRet &= maskTXBYTES;
 	}
 	
+	
+	
 	//Burst write to TX buffer
 	WIRELESS_SPI_Write(txBuffer, WIRELESS_RXTX_FIFO, 2);
-
-	
-//	//
-//	WIRELESS_SPI_Read(testBuffer, WIRELESS_RXTX_FIFO, 2);
-//	printf("After write TX FIFO_0:%d\n", testBuffer[0]);
-//	printf("After write TX FIFO_1:%d\n", testBuffer[1]);
-//	//
-	
-//	//
-//	//Read the number of bytes left in the TX FIFO after send operation
-//  statusRegRet = read_Status_Register(WIRELESS_STATUS_TXBYTES);
-//	statusRegRet &= maskTXBYTES;
-//	printf("Bytes left in the TX FIFO after write:%d\n", statusRegRet);
-//	//
-	
   
+	
+	
+	
+	
+	
+	
+	
   //Wait for the write to complete
   statusRegRet = read_Status_Register(WIRELESS_STATUS_TXBYTES);
 	statusRegRet &= maskTXBYTES;
@@ -251,12 +244,6 @@ void wirelessTransmit_TX(float* angles)
 	
 	//Enable the STX
 	send_command_strobe(WIRELESS_STROBE_STX);
-//	while(1)
-//	{
-//		statusRegRet = read_Status_Register(WIRELESS_STATUS_MARCSTATE);
-//	  statusRegRet &= maskMARCSTATE;
-//	  printf("Status:%x\n", statusRegRet);
-//	}
 	
 	//wait to reach IDLE state
 	statusRegRet = read_Status_Register(WIRELESS_STATUS_MARCSTATE);
@@ -271,18 +258,7 @@ void wirelessTransmit_TX(float* angles)
   statusRegRet = read_Status_Register(WIRELESS_STATUS_TXBYTES);
 	statusRegRet &= maskTXBYTES;
 	//printf("Bytes left in the TX FIFO:%d\n", statusRegRet);
-	
-	
-	
-	//
-	//Read the number of bytes left in the TX FIFO after send operation
-//  statusRegRet = read_Status_Register(WIRELESS_STATUS_RXBYTES);
-//	statusRegRet &= maskTXBYTES;
-//	printf("Bytes left in the RX FIFO:%d\n", statusRegRet);
-	
-//	printf("TX FIFO_0:%d\n", txBuffer[0]);
-//	printf("TX FIFO_1:%d\n", txBuffer[1]);
-	//       
+	       
 	return;
 	
 }
@@ -315,19 +291,8 @@ void wirelessReceive_RX(void)
 	  statusRegRet &= maskMARCSTATE;
 	}
 	
-	
 	statusRegRet = read_Status_Register(WIRELESS_STATUS_RXBYTES);
 	statusRegRet &= maskTXBYTES;
-	
-	//printf("Num of bytes in RX FIFO:%x", statusRegRet);
-	
-//	while(statusRegRet != maskTxbytesBytesSent)
-//	{
-//		statusRegRet = read_Status_Register(WIRELESS_STATUS_RXBYTES);
-//	  statusRegRet &= maskTXBYTES;
-//	}
-	
-	
 	
 }
 void wireless_config_settings(void)

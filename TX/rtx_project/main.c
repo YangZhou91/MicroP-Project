@@ -5,178 +5,252 @@
 #include "wireless_spi_config.h"
 #include "wireless_Impl.h"
 #include "tilt_thread.h"
-
 #include "keypad.h"
-#include "stdio.h"
+#include <stdio.h>
 #include <math.h>
 #include <inttypes.h>
 #include "stm32f4xx_conf.h"
-#include "userbutton_config.h"
-#include "mode2_thread.h"
+#include "LCD_Impl.h"
 
-int32_t key_signal = 3;
-// Function prototype
-void thread_keypad(void const * argument);
-void mode2_thread(void const *argument);
-//void transmitTiltAngles(void const * argument);
-static void set_mode2_signal(void);
-static void set_mode1_signal(void);
+int32_t key_signal = 1;
+int8_t motor_init[2] = {0,0};
+int8_t mode_A[2] = {65,65};
+int8_t mode_B[2] = {66,66};
+int8_t mode_C[2] = {67,67};
 
-// Thread ids
-osThreadId temperature_TurnDispFlag_thread;
-osThreadId tilt_TurnDispFlag_thread;
-//osThreadId Alarm_LED_threadId;
-osThreadId tilt_transmit_thread;
-osThreadId keypad_thread;
-static osThreadId tid_mode2;
-static osThreadId tid_mode1;
+char mode;
+char sequence[2];
 
-// Thread defination
-//osThreadDef(temperature_detection_thread, osPriorityNormal, 1, 0); // temperature detection thread
+
+
+
+void keypad(void const * argument);
+
 osThreadDef(tilt_detection_thread, osPriorityNormal, 1, 0);        // tilt angles detection thread
-osThreadDef(transmitTiltAngles, osPriorityNormal, 1, 0);             // tilt transmit thread
-osThreadDef(thread_keypad, osPriorityNormal, 1, 0);
-osThreadDef(mode2_thread, osPriorityNormal, 1, 0);
+osThreadDef(tilt_DispFlag_thread, osPriorityNormal, 1, 0);         // tilt angles display thread
+osThreadDef(transmitTiltAngles, osPriorityNormal, 1, 0);           // tilt angles transmit thread
+//osThreadDef(transmitSequence, osPriorityNormal, 1, 0);
+osThreadDef(keypad, osPriorityNormal, 1, 0);
+
+osThreadId tilt_thread;
+osThreadId tilt_transmit_thread;
+//osThreadId transmit_sequence_thread;
+osThreadId keypad_thread;
 
 
 
-// Semaphore creation
-//osSemaphoreId semaphore;
-//osSemaphoreDef(semaphore);
-
-
-
-// Thread status which will be used in the thread termination
-osStatus mode1_thread_status;
-osStatus mode2_thread_status;
-
-/*!
- @brief Program entry point
- */
 int main (void) {
 
-	//Create semaphore with one resource
-//	semaphore = osSemaphoreCreate(osSemaphore(semaphore), 1);
+	LCD_Init();
+  char testLCD[10] = "Test";
 	
-// Init the pushButton
-	EXTI_NVIC_Config_PushButton();	
+	LCD_DISPLAY_UPDATE_POS(0x80, testLCD);
+//	int i = ch - '0';
 	
-	osThreadId tilt_thread;
-	// ID for thread
-	osThreadId tid_thread1;
-	GPIO_InitTypeDef  GPIO_InitStructure;
+/*copy characters*/
+//	char *ch = "A12B34A56B15B31B42B12B62B56";
+//	int i = 0;
+//	char *s = ch;
+//	printf ("%s", s);
+//	
+	
+	
+	
+	/*SIZE OF POINTER*/
+	
+//	int size = strlen(ch);
+//	printf("size: %d", size);
+	
+	/*help method to extract number from characters*/
+//	int8_t r[3];
+//	int8_t k = 0;
+//	while ( k<3 ){
+//		for (int8_t i = 0; i < size ; i++){
+//			if(ch[i] == 'A' || ch[i] == 'B'){
+//				r[k] = (ch[i+1] - '0')*10 + (ch[i+2] - '0');
+//				if (ch[i] == 'B'){
+//					r[k] = -r[k];
+//				}
+//				printf("r[%d] = %d\n", k, r[k]);
+//				k++;
+//			}
+//		}
+//	}
+//	
+	
+//	char *copy = "  ";
+//	int i;
+//	i = 0;
+//		while ((*copy = *ch) != ' ') {
+//		copy++;
+//		ch++;
+//		}
+	
+////	for (int8_t i = 0; i < size ; i++){
+//		printf("%c\n", ch[size-1]);
+//	//	printf("%s", copy);
+//		
+////	}
+//	
+	
 
-//Make thread active 
-  tilt_thread = osThreadCreate(osThread(tilt_detection_thread),NULL);
-	//tilt_transmit_thread = osThreadCreate(osThread(transmitTiltAngles), NULL);
-	keypad_thread = osThreadCreate(osThread(thread_keypad), NULL);
-	
+//	printf("%d\n", size);
+//	printf("%s", ch);
+
+
 
 	wireless_spi_Init();
+	
 
-	//----------------TX------------------------------
-	uint8_t readreg=0x00;
-	readreg = read_Status_Register(WIRELESS_STATUS_VERSION);
+	
+
+	
+	printf("I love woman with big tit\n");
+	
+	
 	while(1){
-		osDelay(osWaitForever);
-	}
-	
-}
-static void set_mode1_signal(void){
-	int32_t signal;
-	printf("Enter the set mode1 signal method");
-	tid_mode1 = osThreadCreate(osThread(transmitTiltAngles), NULL);
-	if(tid_mode1 == NULL){
-		printf("The thread didn't create");
-	}
-	else{
-		signal = osSignalSet(tid_mode1, 0x00000005);
-	}
-}
-
-static void set_mode2_signal(void){
-	int32_t signal;
-	
-	printf("Enter the set_mode2_signal method.\n");
-	tid_mode2 = osThreadCreate(osThread(mode2_thread), NULL);
-	if(tid_mode2 == NULL){
-		printf("The thread didn't create");
-	}
-	else{
-		signal = osSignalSet(tid_mode2, 0x00000005);
- 	}
-}
-
-
-void thread_keypad(void const *argument){
-	printf("keypad thread entered! \n");		
-	
-	int num = -1;
-	char ch;
-	while(1){
-		/*init keypad column*/
+		wirelessTransmit_TX(motor_init);
 		keypad_column_init();		
-		//osSignalWait(key_signal, osWaitForever);
-		/*button deboncing*/
-		osDelay(180);
+		osDelay(100);
+		
 		/*read column*/
-		int key_column = readKeyColumn();
-		/*init keypad row*/
+		int8_t key_column = readKeyColumn();
 		keypad_row_init();
+		
 		/*read row*/
-		int key_row = readKeyRow();
-		/*read number*/
-		num = read_keypad(key_column, key_row);
+		int8_t key_row = readKeyRow();
 		
-		if (num != -1){
-			printf ("%d \n", num);
+		mode = read_keypad(key_column, key_row);
+			
+		if (mode != 'e'){
+			if (mode == 'A'){
+				printf (">>>>>>>>Entering Mode_1 Real Time Tilting<<<<<<<<\n");
+				wirelessTransmit_TX(mode_A);
+				while(1){
+				tilt_thread = osThreadCreate(osThread(tilt_detection_thread),NULL);
+				tilt_transmit_thread = osThreadCreate(osThread(transmitTiltAngles),NULL);
+				}
+			
+				
+				
+				uint8_t readreg=read_Status_Register(WIRELESS_STATUS_VERSION);
+			}else if (mode == 'B'){
+				printf (">>>>>>>>Entering Mode_2 Movement Sequence Input<<<<<<<<\n");
+				wirelessTransmit_TX(mode_B);
+//				printf ("A: positive sign(must be entered). B: negative sign. C: terminate input\n");
+//				printf ("IMPORTANT: To input <30,-60,10> <-45,65,8>...<20,-30,5> You shall enter the key as following:\n");
+//				printf ("A30B60A10B45A65A08...A20B30A05C\n");
+				
+				keypad_thread = osThreadCreate(osThread(keypad), NULL);
+				
+				
+				
+				
+				
+			}else if (mode == 'C'){
+				printf (">>>>>>>>Entering Mode_3 Record and Play Option<<<<<<<<\n");
+				wirelessTransmit_TX(mode_C);
+				
+			}
 		}
-			else{
-			/*read characters if it is not a number*/
-			ch = read_symble(key_column, key_row);
-			if (ch != 'v'){
-				if (ch == 'A'){
-					printf("Enter mode 1 \n");
-					mode2_thread_status = osThreadTerminate(tid_mode2);
-					set_mode1_signal();
-
-				}else if (ch == 'B'){
-					printf("Enter mode 2 \n");
-					mode1_thread_status = osThreadTerminate(tid_mode1);
-					set_mode2_signal();
-				}else if (ch == 'C'){
-					printf("Enter mode 3 \n");
-				}else
-					printf ("%c", ch);
-			}
-			}
 	}
-}
-void PushBotton_ISR(void){
+
+	  
 	
-	return;
+
+
 }
 
-// Push button interrupt isr
 
-void EXTI0_IRQHandler(void)
 
-{
-  if(EXTI_GetITStatus(EXTI_Line0) != RESET)
 
-  {
-		// call the push button interrupt isr
-		//PushButton_ISR();
-		printf("botton pressed. \n");
-		PushBotton_ISR();
+
+
+
+
+
+
+
+
+
+
+
+void keypad(void const *argument){
+	printf("keypad thread entered!\n");		
+	int8_t num = -1;
+	int8_t k = 0;;
+	
+	char ch;
+	
+	
+	
+//	while(1){
+//		keypad_column_init();		
+//		osDelay(200);
+//		
+//		/*read column*/
+//		int8_t key_column = readKeyColumn();
+//		keypad_row_init();
+//		
+//		/*read row*/
+//		int8_t key_row = readKeyRow();
+//		
+//		/*read number*/
+//		num = read_keypad(key_column, key_row);
+	
+//		if (num != -1)
+//			printf ("%d\n", num);
+//		else{
+//			ch = read_symble(key_column, key_row);
+//			if (ch != 'e'){
+//					printf ("%c\n", ch);
+//			}
+//		
+		while (ch != 'D'){
+			keypad_column_init();		
+			osDelay(300);
+			
+			/*read column*/
+			int8_t key_column = readKeyColumn();
+			keypad_row_init();
+			
+			/*read row*/
+			int8_t key_row = readKeyRow();
+			
+			ch = read_keypad(key_column, key_row);
+			
+			
 		
-		// wait to avoid button debounce
-		//LCD_Delay_Longer(100);
-
-    /* Clear the EXTI line 1 pending bit */
-    EXTI_ClearITPendingBit(EXTI_Line0);
-  }
+			
+			
+			if (ch != 'e' ){	
+//				sequence[k] = ch;
+//				printf("sequence[%d]: %c\n", k,sequence[k] );
+//				k++;
+				
+				//if (ch == 'D'){
+					sequence[0] = ch;
+					sequence[1] = 'D';
+					printf ("before sendSequence: %s\n", sequence);		
+					sendSequence(sequence);
+					//transmit_sequence_thread = osThreadCreate(osThread(transmitSequence), NULL);
+				
+					
+					
+					
+				//}
+				
+				
+			}
+		}
+		
+//		
+//		
+		
+		
 }
+
+
 
 
 

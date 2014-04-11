@@ -1,5 +1,5 @@
 .\obj\wireless_spi_config.o: ..\wireless_spi_config.c
-.\obj\wireless_spi_config.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\obj\wireless_spi_config.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdint.h
 .\obj\wireless_spi_config.o: ../CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 .\obj\wireless_spi_config.o: ../inc/core_cm4.h
 .\obj\wireless_spi_config.o: ../inc/core_cmInstr.h

@@ -2,7 +2,7 @@
 .\obj\pitch_pwm_timer.o: pitch_PWM_Timer.h
 .\obj\pitch_pwm_timer.o: ../CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 .\obj\pitch_pwm_timer.o: ../inc/core_cm4.h
-.\obj\pitch_pwm_timer.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\obj\pitch_pwm_timer.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdint.h
 .\obj\pitch_pwm_timer.o: ../inc/core_cmInstr.h
 .\obj\pitch_pwm_timer.o: ../inc/core_cmFunc.h
 .\obj\pitch_pwm_timer.o: ../inc/core_cm4_simd.h

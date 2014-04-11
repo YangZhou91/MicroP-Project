@@ -22,7 +22,7 @@
   * @param  int CCR1_val : control duty cycle of a PWM signal
   * @retval None
   */
-void pitch_motor(int CCR1_Val){
+void pitch_pwm(int CCR1_Val){
 	TIM_OCInitTypeDef  TIM_OCInitStructure;
   /* PWM21 Mode configuration: Channel1 */
   TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM1;

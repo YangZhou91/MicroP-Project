@@ -2,7 +2,7 @@
 .\obj\stm32f4xx_wwdg.o: ../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_wwdg.h
 .\obj\stm32f4xx_wwdg.o: ../CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 .\obj\stm32f4xx_wwdg.o: ../inc/core_cm4.h
-.\obj\stm32f4xx_wwdg.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\obj\stm32f4xx_wwdg.o: C:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdint.h
 .\obj\stm32f4xx_wwdg.o: ../inc/core_cmInstr.h
 .\obj\stm32f4xx_wwdg.o: ../inc/core_cmFunc.h
 .\obj\stm32f4xx_wwdg.o: ../inc/core_cm4_simd.h
