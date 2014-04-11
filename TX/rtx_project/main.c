@@ -109,7 +109,8 @@ int main (void) {
 
 	
 
-	
+	char welcome[8] = "Welcome"; 
+	LCD_DISPLAY_UPDATE_POS(0x80, welcome);
 	printf("I love woman with big tit\n");
 	tid_mode_change = osThreadCreate(osThread(mode_change_thread),NULL);
 	
@@ -238,10 +239,12 @@ void keypad(void const *argument){
 				//if (ch == 'D'){
 					sequence[0] = ch;
 					sequence[1] = 'D';
-					printf ("before sendSequence: %s\n", sequence);		
+					printf ("before sendSequence: %s\n", sequence);
+					LCD_clear_display();
+					LCD_DISPLAY_UPDATE_POS(0x80, sequence);
 					sendSequence(sequence);
 					//transmit_sequence_thread = osThreadCreate(osThread(transmitSequence), NULL);
-				
+					
 					
 					
 					

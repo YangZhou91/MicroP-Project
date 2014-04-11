@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\obj\output.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\obj\output.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Fri Apr 11 01:02:44 2014
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Fri Apr 11 10:26:05 2014
 <BR><P>
 <H3>Maximum Stack Usage =        496 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -528,8 +528,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[70]"></a>main</STRONG> (Thumb, 60 bytes, Stack size 16 bytes, main.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = main &rArr; LCD_DISPLAY_UPDATE_POS &rArr; LCD_set &rArr; LCD_Command_dataRegs
+<P><STRONG><a name="[70]"></a>main</STRONG> (Thumb, 76 bytes, Stack size 24 bytes, main.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = main &rArr; LCD_DISPLAY_UPDATE_POS &rArr; LCD_set &rArr; LCD_Command_dataRegs
 </UL>
 <BR>[Calls]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wireless_spi_Init
 <LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osThreadCreate
@@ -541,16 +541,18 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> rtx_conf_cm.o(.constdata)
 </UL>
-<P><STRONG><a name="[74]"></a>keypad</STRONG> (Thumb, 94 bytes, Stack size 32 bytes, main.o(.text))
+<P><STRONG><a name="[74]"></a>keypad</STRONG> (Thumb, 106 bytes, Stack size 32 bytes, main.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = keypad &rArr; sendSequence &rArr; wirelessTransmit_TX &rArr; WIRELESS_SPI_Write &rArr; WIRELESS_SPI_SendByte
 </UL>
-<BR>[Calls]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendSequence
+<BR>[Calls]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendSequence
 <LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_keypad
 <LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readKeyRow
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readKeyColumn
 <LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;keypad_row_init
 <LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;keypad_column_init
+<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_clear_display
+<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DISPLAY_UPDATE_POS
 <LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main.o(.constdata)
@@ -558,14 +560,14 @@ Global Symbols
 <P><STRONG><a name="[75]"></a>mode_change_thread</STRONG> (Thumb, 306 bytes, Stack size 16 bytes, main.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = mode_change_thread &rArr; wirelessTransmit_TX &rArr; WIRELESS_SPI_Write &rArr; WIRELESS_SPI_SendByte
 </UL>
-<BR>[Calls]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wirelessTransmit_TX
+<BR>[Calls]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wirelessTransmit_TX
 <LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_keypad
-<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_Status_Register
+<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_Status_Register
 <LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readKeyRow
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readKeyColumn
-<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osThreadTerminate
+<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osThreadTerminate
 <LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osThreadCreate
-<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSignalWait
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSignalWait
 <LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;keypad_row_init
 <LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;keypad_column_init
@@ -576,57 +578,57 @@ Global Symbols
 <P><STRONG><a name="[11]"></a>EXTI0_IRQHandler</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, main.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = EXTI0_IRQHandler &rArr; osSignalSet &rArr; isr_evt_set &rArr; rt_psq_enq
 </UL>
-<BR>[Calls]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSignalSet
-<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI_GetITStatus
-<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI_ClearITPendingBit
+<BR>[Calls]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSignalSet
+<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI_GetITStatus
+<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI_ClearITPendingBit
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f4xx.o(RESET)
 </UL>
 <P><STRONG><a name="[61]"></a>fputc</STRONG> (Thumb, 14 bytes, Stack size 16 bytes, fputc_debug.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = fputc
 </UL>
-<BR>[Calls]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ITM_SendChar
+<BR>[Calls]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ITM_SendChar
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> printf3.o(i.__0printf$3)
 </UL>
-<P><STRONG><a name="[9b]"></a>_ttywrch</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, fputc_debug.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ITM_SendChar
+<P><STRONG><a name="[9c]"></a>_ttywrch</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, fputc_debug.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ITM_SendChar
 </UL>
 
 <P><STRONG><a name="[13d]"></a>_sys_exit</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, fputc_debug.o(.text), UNUSED)
 
-<P><STRONG><a name="[9d]"></a>WIRELESS_SPI_TIMEOUT_UserCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, wireless_impl.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIRELESS_SPI_SendByte
+<P><STRONG><a name="[9e]"></a>WIRELESS_SPI_TIMEOUT_UserCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, wireless_impl.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIRELESS_SPI_SendByte
 </UL>
 
-<P><STRONG><a name="[a1]"></a>WIRELESS_SPI_Write</STRONG> (Thumb, 70 bytes, Stack size 24 bytes, wireless_impl.o(.text))
+<P><STRONG><a name="[a2]"></a>WIRELESS_SPI_Write</STRONG> (Thumb, 70 bytes, Stack size 24 bytes, wireless_impl.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = WIRELESS_SPI_Write &rArr; WIRELESS_SPI_SendByte
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
-<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetBits
-<LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIRELESS_SPI_SendByte
+<BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetBits
+<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIRELESS_SPI_SendByte
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wireless_config_settings
-<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wirelessTransmit_TX
+<BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wireless_config_settings
+<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wirelessTransmit_TX
 </UL>
 
-<P><STRONG><a name="[a4]"></a>send_command_strobe</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, wireless_impl.o(.text))
+<P><STRONG><a name="[a5]"></a>send_command_strobe</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, wireless_impl.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = send_command_strobe &rArr; WIRELESS_SPI_SendByte
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
-<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetBits
-<LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIRELESS_SPI_SendByte
+<BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetBits
+<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIRELESS_SPI_SendByte
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wirelessReceive_RX
-<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wireless_config_settings
-<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wirelessTransmit_TX
+<BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wirelessReceive_RX
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wireless_config_settings
+<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wirelessTransmit_TX
 </UL>
 
-<P><STRONG><a name="[a5]"></a>wireless_config_settings</STRONG> (Thumb, 612 bytes, Stack size 16 bytes, wireless_impl.o(.text))
+<P><STRONG><a name="[a6]"></a>wireless_config_settings</STRONG> (Thumb, 612 bytes, Stack size 16 bytes, wireless_impl.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = wireless_config_settings &rArr; WIRELESS_SPI_Write &rArr; WIRELESS_SPI_SendByte
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_command_strobe
-<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIRELESS_SPI_Write
+<BR>[Calls]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_command_strobe
+<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIRELESS_SPI_Write
 </UL>
 <BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wireless_spi_Init
 </UL>
@@ -634,56 +636,56 @@ Global Symbols
 <P><STRONG><a name="[89]"></a>wireless_spi_Init</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, wireless_impl.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 60<LI>Call Chain = wireless_spi_Init &rArr; wireless_spi_config &rArr; GPIO_PinAFConfig
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wireless_spi_config
-<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wireless_config_settings
+<BR>[Calls]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wireless_spi_config
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wireless_config_settings
 </UL>
 <BR>[Called By]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[a7]"></a>WIRELESS_SPI_Read</STRONG> (Thumb, 70 bytes, Stack size 16 bytes, wireless_impl.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
-<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetBits
-<LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIRELESS_SPI_SendByte
+<P><STRONG><a name="[a8]"></a>WIRELESS_SPI_Read</STRONG> (Thumb, 70 bytes, Stack size 16 bytes, wireless_impl.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetBits
+<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIRELESS_SPI_SendByte
 </UL>
 
-<P><STRONG><a name="[94]"></a>read_Status_Register</STRONG> (Thumb, 46 bytes, Stack size 16 bytes, wireless_impl.o(.text))
+<P><STRONG><a name="[95]"></a>read_Status_Register</STRONG> (Thumb, 46 bytes, Stack size 16 bytes, wireless_impl.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = read_Status_Register &rArr; WIRELESS_SPI_SendByte
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
-<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetBits
-<LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIRELESS_SPI_SendByte
+<BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetBits
+<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIRELESS_SPI_SendByte
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wirelessReceive_RX
-<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wirelessTransmit_TX
+<BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wirelessReceive_RX
+<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wirelessTransmit_TX
 <LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mode_change_thread
 </UL>
 
-<P><STRONG><a name="[93]"></a>wirelessTransmit_TX</STRONG> (Thumb, 186 bytes, Stack size 32 bytes, wireless_impl.o(.text))
+<P><STRONG><a name="[94]"></a>wirelessTransmit_TX</STRONG> (Thumb, 186 bytes, Stack size 32 bytes, wireless_impl.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = wirelessTransmit_TX &rArr; WIRELESS_SPI_Write &rArr; WIRELESS_SPI_SendByte
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_command_strobe
-<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIRELESS_SPI_Write
-<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_Status_Register
+<BR>[Calls]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_command_strobe
+<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIRELESS_SPI_Write
+<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_Status_Register
 </UL>
 <BR>[Called By]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;transmitTiltAngles
-<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendSequence
+<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendSequence
 <LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mode_change_thread
 </UL>
 
-<P><STRONG><a name="[a8]"></a>wirelessReceive_RX</STRONG> (Thumb, 88 bytes, Stack size 24 bytes, wireless_impl.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_command_strobe
-<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_Status_Register
+<P><STRONG><a name="[a9]"></a>wirelessReceive_RX</STRONG> (Thumb, 88 bytes, Stack size 24 bytes, wireless_impl.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_command_strobe
+<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_Status_Register
 </UL>
 
-<P><STRONG><a name="[a6]"></a>wireless_spi_config</STRONG> (Thumb, 246 bytes, Stack size 32 bytes, wireless_spi_config.o(.text))
+<P><STRONG><a name="[a7]"></a>wireless_spi_config</STRONG> (Thumb, 246 bytes, Stack size 32 bytes, wireless_spi_config.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = wireless_spi_config &rArr; GPIO_PinAFConfig
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_Init
-<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_I2S_DeInit
-<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_Cmd
-<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB1PeriphClockCmd
-<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_PinAFConfig
-<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
+<BR>[Calls]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_Init
+<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_I2S_DeInit
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_Cmd
+<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB1PeriphClockCmd
+<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_PinAFConfig
+<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
 <LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphClockCmd
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_AHB1PeriphClockCmd
 <LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
@@ -691,101 +693,101 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wireless_spi_Init
 </UL>
 
-<P><STRONG><a name="[af]"></a>LIS302DL_TIMEOUT_UserCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4_discovery_lis302dl.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_SendByte
+<P><STRONG><a name="[b0]"></a>LIS302DL_TIMEOUT_UserCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4_discovery_lis302dl.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_SendByte
 </UL>
 
-<P><STRONG><a name="[b0]"></a>LIS302DL_Write</STRONG> (Thumb, 58 bytes, Stack size 16 bytes, stm32f4_discovery_lis302dl.o(.text))
+<P><STRONG><a name="[b1]"></a>LIS302DL_Write</STRONG> (Thumb, 58 bytes, Stack size 16 bytes, stm32f4_discovery_lis302dl.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = LIS302DL_Write &rArr; LIS302DL_SendByte
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_SendByte
-<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
-<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetBits
+<BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_SendByte
+<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetBits
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MEM_Interrupt_Config
-<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_RebootCmd
-<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_FullScaleCmd
-<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_DataRateCmd
-<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_LowpowerCmd
-<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_InterruptConfig
-<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_FilterConfig
-<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Init
+<BR>[Called By]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MEM_Interrupt_Config
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_RebootCmd
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_FullScaleCmd
+<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_DataRateCmd
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_LowpowerCmd
+<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_InterruptConfig
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_FilterConfig
+<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Init
 </UL>
 
-<P><STRONG><a name="[b2]"></a>LIS302DL_Init</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, stm32f4_discovery_lis302dl.o(.text))
+<P><STRONG><a name="[b3]"></a>LIS302DL_Init</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, stm32f4_discovery_lis302dl.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 68<LI>Call Chain = LIS302DL_Init &rArr; LIS302DL_LowLevel_Init &rArr; GPIO_PinAFConfig
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Write
-<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_LowLevel_Init
+<BR>[Calls]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Write
+<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_LowLevel_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_Accelerometer_MEM
+<BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_Accelerometer_MEM
 </UL>
 
-<P><STRONG><a name="[b3]"></a>LIS302DL_Read</STRONG> (Thumb, 66 bytes, Stack size 16 bytes, stm32f4_discovery_lis302dl.o(.text))
+<P><STRONG><a name="[b4]"></a>LIS302DL_Read</STRONG> (Thumb, 66 bytes, Stack size 16 bytes, stm32f4_discovery_lis302dl.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = LIS302DL_Read &rArr; LIS302DL_SendByte
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_SendByte
-<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
-<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetBits
+<BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_SendByte
+<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetBits
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_ReadACC
-<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_RebootCmd
-<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_FullScaleCmd
-<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_DataRateCmd
-<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_LowpowerCmd
-<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_InterruptConfig
-<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_FilterConfig
-</UL>
-
-<P><STRONG><a name="[b4]"></a>LIS302DL_FilterConfig</STRONG> (Thumb, 58 bytes, Stack size 16 bytes, stm32f4_discovery_lis302dl.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Read
-<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Write
+<BR>[Called By]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_ReadACC
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_RebootCmd
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_FullScaleCmd
+<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_DataRateCmd
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_LowpowerCmd
+<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_InterruptConfig
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_FilterConfig
 </UL>
 
-<P><STRONG><a name="[b5]"></a>LIS302DL_InterruptConfig</STRONG> (Thumb, 42 bytes, Stack size 16 bytes, stm32f4_discovery_lis302dl.o(.text))
+<P><STRONG><a name="[b5]"></a>LIS302DL_FilterConfig</STRONG> (Thumb, 58 bytes, Stack size 16 bytes, stm32f4_discovery_lis302dl.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Read
+<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Write
+</UL>
+
+<P><STRONG><a name="[b6]"></a>LIS302DL_InterruptConfig</STRONG> (Thumb, 42 bytes, Stack size 16 bytes, stm32f4_discovery_lis302dl.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = LIS302DL_InterruptConfig &rArr; LIS302DL_Read &rArr; LIS302DL_SendByte
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Read
-<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Write
+<BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Read
+<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Write
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MEM_Interrupt_Config
-</UL>
-
-<P><STRONG><a name="[b6]"></a>LIS302DL_LowpowerCmd</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, stm32f4_discovery_lis302dl.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Read
-<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Write
+<BR>[Called By]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MEM_Interrupt_Config
 </UL>
 
-<P><STRONG><a name="[b7]"></a>LIS302DL_DataRateCmd</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, stm32f4_discovery_lis302dl.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Read
-<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Write
+<P><STRONG><a name="[b7]"></a>LIS302DL_LowpowerCmd</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, stm32f4_discovery_lis302dl.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Read
+<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Write
 </UL>
 
-<P><STRONG><a name="[b8]"></a>LIS302DL_FullScaleCmd</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, stm32f4_discovery_lis302dl.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Read
-<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Write
+<P><STRONG><a name="[b8]"></a>LIS302DL_DataRateCmd</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, stm32f4_discovery_lis302dl.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Read
+<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Write
 </UL>
 
-<P><STRONG><a name="[b9]"></a>LIS302DL_RebootCmd</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, stm32f4_discovery_lis302dl.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Read
-<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Write
+<P><STRONG><a name="[b9]"></a>LIS302DL_FullScaleCmd</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, stm32f4_discovery_lis302dl.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Read
+<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Write
 </UL>
 
-<P><STRONG><a name="[ba]"></a>LIS302DL_ReadACC</STRONG> (Thumb, 112 bytes, Stack size 24 bytes, stm32f4_discovery_lis302dl.o(.text))
+<P><STRONG><a name="[ba]"></a>LIS302DL_RebootCmd</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, stm32f4_discovery_lis302dl.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Read
+<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Write
+</UL>
+
+<P><STRONG><a name="[bb]"></a>LIS302DL_ReadACC</STRONG> (Thumb, 112 bytes, Stack size 24 bytes, stm32f4_discovery_lis302dl.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = LIS302DL_ReadACC &rArr; LIS302DL_Read &rArr; LIS302DL_SendByte
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Read
+<BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Read
 </UL>
 <BR>[Called By]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tilt_detection_thread
 </UL>
 
-<P><STRONG><a name="[c0]"></a>get_calibration_data</STRONG> (Thumb, 254 bytes, Stack size 16 bytes, calibration.o(.text))
+<P><STRONG><a name="[c1]"></a>get_calibration_data</STRONG> (Thumb, 254 bytes, Stack size 16 bytes, calibration.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = get_calibration_data
 </UL>
 <BR>[Called By]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tilt_detection_thread
 </UL>
 
-<P><STRONG><a name="[bb]"></a>EXTI_NVIC_Config</STRONG> (Thumb, 116 bytes, Stack size 24 bytes, mem_interrupt.o(.text))
+<P><STRONG><a name="[bc]"></a>EXTI_NVIC_Config</STRONG> (Thumb, 116 bytes, Stack size 24 bytes, mem_interrupt.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = EXTI_NVIC_Config &rArr; GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SYSCFG_EXTILineConfig
@@ -799,16 +801,16 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tilt_detection_thread
 </UL>
 
-<P><STRONG><a name="[bc]"></a>MEM_Interrupt_Config</STRONG> (Thumb, 42 bytes, Stack size 16 bytes, mem_interrupt.o(.text))
+<P><STRONG><a name="[bd]"></a>MEM_Interrupt_Config</STRONG> (Thumb, 42 bytes, Stack size 16 bytes, mem_interrupt.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = MEM_Interrupt_Config &rArr; LIS302DL_InterruptConfig &rArr; LIS302DL_Read &rArr; LIS302DL_SendByte
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_InterruptConfig
-<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Write
+<BR>[Calls]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_InterruptConfig
+<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Write
 </UL>
 <BR>[Called By]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tilt_detection_thread
 </UL>
 
-<P><STRONG><a name="[bf]"></a>MovingAverageFilter</STRONG> (Thumb, 114 bytes, Stack size 20 bytes, movingaveragefilter.o(.text))
+<P><STRONG><a name="[c0]"></a>MovingAverageFilter</STRONG> (Thumb, 114 bytes, Stack size 20 bytes, movingaveragefilter.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = MovingAverageFilter
 </UL>
 <BR>[Called By]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tilt_detection_thread
@@ -819,26 +821,26 @@ Global Symbols
 <P><STRONG><a name="[71]"></a>tilt_detection_thread</STRONG> (Thumb, 284 bytes, Stack size 120 bytes, tilt_thread.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 496<LI>Call Chain = tilt_detection_thread &rArr; calculate_roll &rArr; __hardfp_pow &rArr; __kernel_poly &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_Accelerometer_MEM
-<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osThreadGetId
-<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculate_roll
-<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculate_pitch
-<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MovingAverageFilter
-<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MEM_Interrupt_Config
-<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI_NVIC_Config
-<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_calibration_data
-<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_ReadACC
-<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSignalWait
-<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSignalSet
+<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_Accelerometer_MEM
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osThreadGetId
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculate_roll
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculate_pitch
+<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MovingAverageFilter
+<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MEM_Interrupt_Config
+<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI_NVIC_Config
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_calibration_data
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_ReadACC
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSignalWait
+<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSignalSet
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main.o(.constdata)
 </UL>
 <P><STRONG><a name="[72]"></a>tilt_DispFlag_thread</STRONG> (Thumb, 80 bytes, Stack size 16 bytes, tilt_thread.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = tilt_DispFlag_thread &rArr; osSemaphoreRelease &rArr; isr_sem_send &rArr; rt_psq_enq
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSemaphoreWait
-<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSemaphoreRelease
-<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSignalWait
+<BR>[Calls]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSemaphoreWait
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSemaphoreRelease
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSignalWait
 <LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main.o(.constdata)
@@ -846,19 +848,19 @@ Global Symbols
 <P><STRONG><a name="[73]"></a>transmitTiltAngles</STRONG> (Thumb, 106 bytes, Stack size 24 bytes, tilt_thread.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = transmitTiltAngles &rArr; wirelessTransmit_TX &rArr; WIRELESS_SPI_Write &rArr; WIRELESS_SPI_SendByte
 </UL>
-<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osThreadGetId
-<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wirelessTransmit_TX
-<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSignalWait
+<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osThreadGetId
+<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wirelessTransmit_TX
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSignalWait
 <LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main.o(.constdata)
 </UL>
-<P><STRONG><a name="[92]"></a>sendSequence</STRONG> (Thumb, 110 bytes, Stack size 24 bytes, tilt_thread.o(.text))
+<P><STRONG><a name="[93]"></a>sendSequence</STRONG> (Thumb, 110 bytes, Stack size 24 bytes, tilt_thread.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = sendSequence &rArr; wirelessTransmit_TX &rArr; WIRELESS_SPI_Write &rArr; WIRELESS_SPI_SendByte
 </UL>
-<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osThreadGetId
-<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wirelessTransmit_TX
-<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
+<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osThreadGetId
+<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wirelessTransmit_TX
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 <LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;keypad
@@ -867,42 +869,42 @@ Global Symbols
 <P><STRONG><a name="[12]"></a>EXTI1_IRQHandler</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, tilt_thread.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = EXTI1_IRQHandler &rArr; osSignalSet &rArr; isr_evt_set &rArr; rt_psq_enq
 </UL>
-<BR>[Calls]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSignalSet
-<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI_GetITStatus
-<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI_ClearITPendingBit
+<BR>[Calls]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSignalSet
+<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI_GetITStatus
+<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI_ClearITPendingBit
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f4xx.o(RESET)
 </UL>
-<P><STRONG><a name="[bd]"></a>set_Accelerometer_MEM</STRONG> (Thumb, 38 bytes, Stack size 16 bytes, accelerometer_conf.o(.text))
+<P><STRONG><a name="[be]"></a>set_Accelerometer_MEM</STRONG> (Thumb, 38 bytes, Stack size 16 bytes, accelerometer_conf.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 84<LI>Call Chain = set_Accelerometer_MEM &rArr; LIS302DL_Init &rArr; LIS302DL_LowLevel_Init &rArr; GPIO_PinAFConfig
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Init
+<BR>[Calls]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tilt_detection_thread
 </UL>
 
-<P><STRONG><a name="[c2]"></a>calculate_pitch</STRONG> (Thumb, 296 bytes, Stack size 80 bytes, tilt_angle_calculation.o(.text))
+<P><STRONG><a name="[c3]"></a>calculate_pitch</STRONG> (Thumb, 296 bytes, Stack size 80 bytes, tilt_angle_calculation.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 376<LI>Call Chain = calculate_pitch &rArr; __hardfp_pow &rArr; __kernel_poly &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
-<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
-<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
-<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sqrt
-<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_pow
-<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
+<BR>[Calls]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
+<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
+<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sqrt
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_pow
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
 </UL>
 <BR>[Called By]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tilt_detection_thread
 </UL>
 
-<P><STRONG><a name="[c1]"></a>calculate_roll</STRONG> (Thumb, 296 bytes, Stack size 80 bytes, tilt_angle_calculation.o(.text))
+<P><STRONG><a name="[c2]"></a>calculate_roll</STRONG> (Thumb, 296 bytes, Stack size 80 bytes, tilt_angle_calculation.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 376<LI>Call Chain = calculate_roll &rArr; __hardfp_pow &rArr; __kernel_poly &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
-<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
-<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
-<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sqrt
-<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_pow
-<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
+<BR>[Calls]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
+<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
+<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sqrt
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_pow
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
 </UL>
 <BR>[Called By]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tilt_detection_thread
 </UL>
@@ -910,7 +912,7 @@ Global Symbols
 <P><STRONG><a name="[8d]"></a>keypad_column_init</STRONG> (Thumb, 90 bytes, Stack size 16 bytes, keypad.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = keypad_column_init &rArr; GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
+<BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_AHB1PeriphClockCmd
 <LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
 </UL>
@@ -921,7 +923,7 @@ Global Symbols
 <P><STRONG><a name="[8f]"></a>keypad_row_init</STRONG> (Thumb, 88 bytes, Stack size 16 bytes, keypad.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = keypad_row_init &rArr; GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
+<BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_AHB1PeriphClockCmd
 <LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
 </UL>
@@ -932,7 +934,7 @@ Global Symbols
 <P><STRONG><a name="[8e]"></a>readKeyColumn</STRONG> (Thumb, 76 bytes, Stack size 24 bytes, keypad.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = readKeyColumn
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ReadInputDataBit
+<BR>[Calls]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ReadInputDataBit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mode_change_thread
 <LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;keypad
@@ -941,7 +943,7 @@ Global Symbols
 <P><STRONG><a name="[90]"></a>readKeyRow</STRONG> (Thumb, 82 bytes, Stack size 24 bytes, keypad.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = readKeyRow
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ReadInputDataBit
+<BR>[Calls]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ReadInputDataBit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mode_change_thread
 <LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;keypad
@@ -952,10 +954,10 @@ Global Symbols
 <LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;keypad
 </UL>
 
-<P><STRONG><a name="[cd]"></a>LCD_GPIO_Config</STRONG> (Thumb, 108 bytes, Stack size 24 bytes, lcd_impl.o(.text))
+<P><STRONG><a name="[ce]"></a>LCD_GPIO_Config</STRONG> (Thumb, 108 bytes, Stack size 24 bytes, lcd_impl.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = LCD_GPIO_Config &rArr; GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_WriteBit
+<BR>[Calls]<UL><LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_WriteBit
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_AHB1PeriphClockCmd
 <LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StructInit
 <LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
@@ -963,108 +965,109 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Init
 </UL>
 
-<P><STRONG><a name="[d0]"></a>LCD_Delay</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, lcd_impl.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Delay_Longer
-<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Pulse
+<P><STRONG><a name="[d1]"></a>LCD_Delay</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, lcd_impl.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Delay_Longer
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Pulse
 <LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Init
 </UL>
 
-<P><STRONG><a name="[cf]"></a>LCD_Pulse</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, lcd_impl.o(.text))
+<P><STRONG><a name="[d0]"></a>LCD_Pulse</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, lcd_impl.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = LCD_Pulse
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_WriteBit
-<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Delay
+<BR>[Calls]<UL><LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_WriteBit
+<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Delay
 </UL>
 <BR>[Called By]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_set
 <LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_write
 <LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_FuncSet
-<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_display_CursorHome
-<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_CharacterEntryMode
+<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_display_CursorHome
+<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_CharacterEntryMode
 </UL>
 
-<P><STRONG><a name="[d1]"></a>LCD_Command_dataRegs</STRONG> (Thumb, 130 bytes, Stack size 48 bytes, lcd_impl.o(.text))
+<P><STRONG><a name="[d2]"></a>LCD_Command_dataRegs</STRONG> (Thumb, 130 bytes, Stack size 48 bytes, lcd_impl.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = LCD_Command_dataRegs
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_WriteBit
+<BR>[Calls]<UL><LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_WriteBit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_set
 <LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_write
 <LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_FuncSet
 <LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DisplayOnOff
-<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_clear_display
-<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_display_CursorHome
-<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_CharacterEntryMode
+<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_display_CursorHome
+<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_CharacterEntryMode
+<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_clear_display
 </UL>
 
-<P><STRONG><a name="[d2]"></a>LCD_SelectRegs</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, lcd_impl.o(.text))
+<P><STRONG><a name="[d3]"></a>LCD_SelectRegs</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, lcd_impl.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = LCD_SelectRegs
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_WriteBit
+<BR>[Calls]<UL><LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_WriteBit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_set
 <LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_write
 <LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_FuncSet
 <LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DisplayOnOff
-<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_clear_display
-<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_display_CursorHome
-<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_CharacterEntryMode
+<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_display_CursorHome
+<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_CharacterEntryMode
+<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_clear_display
 </UL>
 
-<P><STRONG><a name="[d3]"></a>LCD_CharacterEntryMode</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, lcd_impl.o(.text))
+<P><STRONG><a name="[d4]"></a>LCD_CharacterEntryMode</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, lcd_impl.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = LCD_CharacterEntryMode &rArr; LCD_Command_dataRegs
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SelectRegs
-<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Command_dataRegs
-<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Pulse
+<BR>[Calls]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SelectRegs
+<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Command_dataRegs
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Pulse
 </UL>
 <BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Init
 </UL>
 
-<P><STRONG><a name="[d4]"></a>LCD_display_CursorHome</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, lcd_impl.o(.text))
+<P><STRONG><a name="[d5]"></a>LCD_display_CursorHome</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, lcd_impl.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = LCD_display_CursorHome &rArr; LCD_Command_dataRegs
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SelectRegs
-<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Command_dataRegs
-<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Pulse
+<BR>[Calls]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SelectRegs
+<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Command_dataRegs
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Pulse
 </UL>
 <BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Init
 </UL>
 
-<P><STRONG><a name="[d5]"></a>LCD_Delay_Longer</STRONG> (Thumb, 22 bytes, Stack size 4 bytes, lcd_impl.o(.text))
+<P><STRONG><a name="[d6]"></a>LCD_Delay_Longer</STRONG> (Thumb, 22 bytes, Stack size 4 bytes, lcd_impl.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = LCD_Delay_Longer
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Delay
+<BR>[Calls]<UL><LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Delay
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Pulse_Longer
+<BR>[Called By]<UL><LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Pulse_Longer
 </UL>
 
-<P><STRONG><a name="[d6]"></a>LCD_Pulse_Longer</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, lcd_impl.o(.text))
+<P><STRONG><a name="[d7]"></a>LCD_Pulse_Longer</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, lcd_impl.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = LCD_Pulse_Longer &rArr; LCD_Delay_Longer
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_WriteBit
-<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Delay_Longer
+<BR>[Calls]<UL><LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_WriteBit
+<LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Delay_Longer
 </UL>
 <BR>[Called By]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DisplayOnOff
-<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_clear_display
+<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_clear_display
 </UL>
 
-<P><STRONG><a name="[d7]"></a>LCD_clear_display</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, lcd_impl.o(.text))
+<P><STRONG><a name="[92]"></a>LCD_clear_display</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, lcd_impl.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = LCD_clear_display &rArr; LCD_Command_dataRegs
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Pulse_Longer
-<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SelectRegs
-<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Command_dataRegs
+<BR>[Calls]<UL><LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Pulse_Longer
+<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SelectRegs
+<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Command_dataRegs
 </UL>
 <BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Display_String
 <LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Init
+<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;keypad
 </UL>
 
 <P><STRONG><a name="[d8]"></a>LCD_DisplayOnOff</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, lcd_impl.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = LCD_DisplayOnOff &rArr; LCD_Command_dataRegs
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Pulse_Longer
-<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SelectRegs
-<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Command_dataRegs
+<BR>[Calls]<UL><LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Pulse_Longer
+<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SelectRegs
+<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Command_dataRegs
 </UL>
 <BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Init
 </UL>
@@ -1072,9 +1075,9 @@ Global Symbols
 <P><STRONG><a name="[d9]"></a>LCD_FuncSet</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, lcd_impl.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = LCD_FuncSet &rArr; LCD_Command_dataRegs
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SelectRegs
-<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Command_dataRegs
-<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Pulse
+<BR>[Calls]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SelectRegs
+<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Command_dataRegs
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Pulse
 </UL>
 <BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Init
 </UL>
@@ -1084,11 +1087,11 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_FuncSet
 <LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DisplayOnOff
-<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_clear_display
-<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_display_CursorHome
-<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_CharacterEntryMode
-<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Delay
-<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GPIO_Config
+<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_display_CursorHome
+<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_CharacterEntryMode
+<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Delay
+<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GPIO_Config
+<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_clear_display
 </UL>
 <BR>[Called By]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1096,9 +1099,9 @@ Global Symbols
 <P><STRONG><a name="[da]"></a>LCD_write</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, lcd_impl.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = LCD_write &rArr; LCD_Command_dataRegs
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SelectRegs
-<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Command_dataRegs
-<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Pulse
+<BR>[Calls]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SelectRegs
+<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Command_dataRegs
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Pulse
 </UL>
 <BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Display_String
 <LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DISPLAY_UPDATE_POS
@@ -1107,16 +1110,16 @@ Global Symbols
 <P><STRONG><a name="[db]"></a>LCD_set</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, lcd_impl.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = LCD_set &rArr; LCD_Command_dataRegs
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SelectRegs
-<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Command_dataRegs
-<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Pulse
+<BR>[Calls]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SelectRegs
+<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Command_dataRegs
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Pulse
 </UL>
 <BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DISPLAY_UPDATE_POS
 </UL>
 
 <P><STRONG><a name="[dc]"></a>LCD_Display_String</STRONG> (Thumb, 38 bytes, Stack size 16 bytes, lcd_impl.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_write
-<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_clear_display
+<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_clear_display
 </UL>
 
 <P><STRONG><a name="[88]"></a>LCD_DISPLAY_UPDATE_POS</STRONG> (Thumb, 30 bytes, Stack size 16 bytes, lcd_impl.o(.text))
@@ -1125,7 +1128,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_set
 <LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_write
 </UL>
-<BR>[Called By]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Called By]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;keypad
+<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[13f]"></a>NVIC_PriorityGroupConfig</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, misc.o(.text), UNUSED)
@@ -1133,7 +1137,7 @@ Global Symbols
 <P><STRONG><a name="[86]"></a>NVIC_Init</STRONG> (Thumb, 108 bytes, Stack size 16 bytes, misc.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = NVIC_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI_NVIC_Config
+<BR>[Called By]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI_NVIC_Config
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI_NVIC_Config_PushButton
 </UL>
 
@@ -1146,7 +1150,7 @@ Global Symbols
 <P><STRONG><a name="[143]"></a>EXTI_DeInit</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, stm32f4xx_exti.o(.text), UNUSED)
 
 <P><STRONG><a name="[85]"></a>EXTI_Init</STRONG> (Thumb, 142 bytes, Stack size 0 bytes, stm32f4xx_exti.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI_NVIC_Config
+<BR><BR>[Called By]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI_NVIC_Config
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI_NVIC_Config_PushButton
 </UL>
 
@@ -1158,12 +1162,12 @@ Global Symbols
 
 <P><STRONG><a name="[147]"></a>EXTI_ClearFlag</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_exti.o(.text), UNUSED)
 
-<P><STRONG><a name="[97]"></a>EXTI_GetITStatus</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, stm32f4xx_exti.o(.text))
+<P><STRONG><a name="[98]"></a>EXTI_GetITStatus</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, stm32f4xx_exti.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[12]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI1_IRQHandler
 <LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI0_IRQHandler
 </UL>
 
-<P><STRONG><a name="[99]"></a>EXTI_ClearITPendingBit</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_exti.o(.text))
+<P><STRONG><a name="[9a]"></a>EXTI_ClearITPendingBit</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_exti.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[12]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI1_IRQHandler
 <LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI0_IRQHandler
 </UL>
@@ -1175,24 +1179,24 @@ Global Symbols
 <P><STRONG><a name="[83]"></a>GPIO_Init</STRONG> (Thumb, 144 bytes, Stack size 20 bytes, stm32f4xx_gpio.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = GPIO_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GPIO_Config
-<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI_NVIC_Config
-<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_LowLevel_Init
-<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wireless_spi_config
+<BR>[Called By]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GPIO_Config
+<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI_NVIC_Config
+<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_LowLevel_Init
+<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wireless_spi_config
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;keypad_row_init
 <LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;keypad_column_init
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI_NVIC_Config_PushButton
 </UL>
 
 <P><STRONG><a name="[82]"></a>GPIO_StructInit</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f4xx_gpio.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GPIO_Config
-<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI_NVIC_Config
+<BR><BR>[Called By]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GPIO_Config
+<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI_NVIC_Config
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI_NVIC_Config_PushButton
 </UL>
 
 <P><STRONG><a name="[148]"></a>GPIO_PinLockConfig</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, stm32f4xx_gpio.o(.text), UNUSED)
 
-<P><STRONG><a name="[cc]"></a>GPIO_ReadInputDataBit</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f4xx_gpio.o(.text))
+<P><STRONG><a name="[cd]"></a>GPIO_ReadInputDataBit</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f4xx_gpio.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readKeyRow
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readKeyColumn
 </UL>
@@ -1203,45 +1207,45 @@ Global Symbols
 
 <P><STRONG><a name="[14b]"></a>GPIO_ReadOutputData</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_gpio.o(.text), UNUSED)
 
-<P><STRONG><a name="[a3]"></a>GPIO_SetBits</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f4xx_gpio.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Read
-<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Write
-<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_LowLevel_Init
-<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wireless_spi_config
-<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIRELESS_SPI_Read
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_command_strobe
-<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIRELESS_SPI_Write
-<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_Status_Register
+<P><STRONG><a name="[a4]"></a>GPIO_SetBits</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f4xx_gpio.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Read
+<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Write
+<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_LowLevel_Init
+<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wireless_spi_config
+<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIRELESS_SPI_Read
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_command_strobe
+<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIRELESS_SPI_Write
+<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_Status_Register
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;keypad_row_init
 <LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;keypad_column_init
 </UL>
 
-<P><STRONG><a name="[a2]"></a>GPIO_ResetBits</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f4xx_gpio.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Read
-<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Write
-<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIRELESS_SPI_Read
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_command_strobe
-<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIRELESS_SPI_Write
-<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_Status_Register
+<P><STRONG><a name="[a3]"></a>GPIO_ResetBits</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f4xx_gpio.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Read
+<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Write
+<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIRELESS_SPI_Read
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_command_strobe
+<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIRELESS_SPI_Write
+<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_Status_Register
 </UL>
 
-<P><STRONG><a name="[ce]"></a>GPIO_WriteBit</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f4xx_gpio.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Pulse_Longer
-<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SelectRegs
-<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Command_dataRegs
-<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Pulse
-<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GPIO_Config
+<P><STRONG><a name="[cf]"></a>GPIO_WriteBit</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f4xx_gpio.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Pulse_Longer
+<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SelectRegs
+<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Command_dataRegs
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Pulse
+<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GPIO_Config
 </UL>
 
 <P><STRONG><a name="[14c]"></a>GPIO_Write</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f4xx_gpio.o(.text), UNUSED)
 
 <P><STRONG><a name="[14d]"></a>GPIO_ToggleBits</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_gpio.o(.text), UNUSED)
 
-<P><STRONG><a name="[aa]"></a>GPIO_PinAFConfig</STRONG> (Thumb, 70 bytes, Stack size 20 bytes, stm32f4xx_gpio.o(.text))
+<P><STRONG><a name="[ab]"></a>GPIO_PinAFConfig</STRONG> (Thumb, 70 bytes, Stack size 20 bytes, stm32f4xx_gpio.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = GPIO_PinAFConfig
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_LowLevel_Init
-<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wireless_spi_config
+<BR>[Called By]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_LowLevel_Init
+<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wireless_spi_config
 </UL>
 
 <P><STRONG><a name="[14e]"></a>RCC_DeInit</STRONG> (Thumb, 60 bytes, Stack size 0 bytes, stm32f4xx_rcc.o(.text), UNUSED)
@@ -1299,10 +1303,10 @@ Global Symbols
 <P><STRONG><a name="[164]"></a>RCC_I2SCLKConfig</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f4xx_rcc.o(.text), UNUSED)
 
 <P><STRONG><a name="[80]"></a>RCC_AHB1PeriphClockCmd</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, stm32f4xx_rcc.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GPIO_Config
-<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI_NVIC_Config
-<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_LowLevel_Init
-<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wireless_spi_config
+<BR><BR>[Called By]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GPIO_Config
+<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI_NVIC_Config
+<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_LowLevel_Init
+<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wireless_spi_config
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;keypad_row_init
 <LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;keypad_column_init
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI_NVIC_Config_PushButton
@@ -1312,14 +1316,14 @@ Global Symbols
 
 <P><STRONG><a name="[166]"></a>RCC_AHB3PeriphClockCmd</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, stm32f4xx_rcc.o(.text), UNUSED)
 
-<P><STRONG><a name="[a9]"></a>RCC_APB1PeriphClockCmd</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, stm32f4xx_rcc.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wireless_spi_config
+<P><STRONG><a name="[aa]"></a>RCC_APB1PeriphClockCmd</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, stm32f4xx_rcc.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wireless_spi_config
 </UL>
 
 <P><STRONG><a name="[81]"></a>RCC_APB2PeriphClockCmd</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, stm32f4xx_rcc.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI_NVIC_Config
-<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_LowLevel_Init
-<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wireless_spi_config
+<BR><BR>[Called By]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI_NVIC_Config
+<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_LowLevel_Init
+<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wireless_spi_config
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI_NVIC_Config_PushButton
 </UL>
 
@@ -1332,11 +1336,11 @@ Global Symbols
 <P><STRONG><a name="[168]"></a>RCC_AHB3PeriphResetCmd</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, stm32f4xx_rcc.o(.text), UNUSED)
 
 <P><STRONG><a name="[e2]"></a>RCC_APB1PeriphResetCmd</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, stm32f4xx_rcc.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_I2S_DeInit
+<BR><BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_I2S_DeInit
 </UL>
 
 <P><STRONG><a name="[e1]"></a>RCC_APB2PeriphResetCmd</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, stm32f4xx_rcc.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_I2S_DeInit
+<BR><BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_I2S_DeInit
 <LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SYSCFG_DeInit
 </UL>
 
@@ -1358,21 +1362,21 @@ Global Symbols
 
 <P><STRONG><a name="[171]"></a>RCC_ClearITPendingBit</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_rcc.o(.text), UNUSED)
 
-<P><STRONG><a name="[ab]"></a>SPI_I2S_DeInit</STRONG> (Thumb, 76 bytes, Stack size 8 bytes, stm32f4xx_spi.o(.text))
+<P><STRONG><a name="[ac]"></a>SPI_I2S_DeInit</STRONG> (Thumb, 76 bytes, Stack size 8 bytes, stm32f4xx_spi.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = SPI_I2S_DeInit
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB1PeriphResetCmd
 <LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphResetCmd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_LowLevel_Init
-<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wireless_spi_config
+<BR>[Called By]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_LowLevel_Init
+<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wireless_spi_config
 </UL>
 
-<P><STRONG><a name="[ac]"></a>SPI_Init</STRONG> (Thumb, 60 bytes, Stack size 8 bytes, stm32f4xx_spi.o(.text))
+<P><STRONG><a name="[ad]"></a>SPI_Init</STRONG> (Thumb, 60 bytes, Stack size 8 bytes, stm32f4xx_spi.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = SPI_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_LowLevel_Init
-<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wireless_spi_config
+<BR>[Called By]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_LowLevel_Init
+<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wireless_spi_config
 </UL>
 
 <P><STRONG><a name="[172]"></a>I2S_Init</STRONG> (Thumb, 346 bytes, Stack size 36 bytes, stm32f4xx_spi.o(.text), UNUSED)
@@ -1381,9 +1385,9 @@ Global Symbols
 
 <P><STRONG><a name="[174]"></a>I2S_StructInit</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, stm32f4xx_spi.o(.text), UNUSED)
 
-<P><STRONG><a name="[ad]"></a>SPI_Cmd</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f4xx_spi.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_LowLevel_Init
-<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wireless_spi_config
+<P><STRONG><a name="[ae]"></a>SPI_Cmd</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f4xx_spi.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_LowLevel_Init
+<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wireless_spi_config
 </UL>
 
 <P><STRONG><a name="[175]"></a>I2S_Cmd</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f4xx_spi.o(.text), UNUSED)
@@ -1400,14 +1404,14 @@ Global Symbols
 
 <P><STRONG><a name="[17b]"></a>I2S_FullDuplexConfig</STRONG> (Thumb, 80 bytes, Stack size 12 bytes, stm32f4xx_spi.o(.text), UNUSED)
 
-<P><STRONG><a name="[a0]"></a>SPI_I2S_ReceiveData</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f4xx_spi.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_SendByte
-<LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIRELESS_SPI_SendByte
+<P><STRONG><a name="[a1]"></a>SPI_I2S_ReceiveData</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f4xx_spi.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_SendByte
+<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIRELESS_SPI_SendByte
 </UL>
 
-<P><STRONG><a name="[9f]"></a>SPI_I2S_SendData</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f4xx_spi.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_SendByte
-<LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIRELESS_SPI_SendByte
+<P><STRONG><a name="[a0]"></a>SPI_I2S_SendData</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f4xx_spi.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_SendByte
+<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIRELESS_SPI_SendByte
 </UL>
 
 <P><STRONG><a name="[17c]"></a>SPI_CalculateCRC</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f4xx_spi.o(.text), UNUSED)
@@ -1422,9 +1426,9 @@ Global Symbols
 
 <P><STRONG><a name="[181]"></a>SPI_I2S_ITConfig</STRONG> (Thumb, 32 bytes, Stack size 12 bytes, stm32f4xx_spi.o(.text), UNUSED)
 
-<P><STRONG><a name="[9e]"></a>SPI_I2S_GetFlagStatus</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f4xx_spi.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_SendByte
-<LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIRELESS_SPI_SendByte
+<P><STRONG><a name="[9f]"></a>SPI_I2S_GetFlagStatus</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f4xx_spi.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_SendByte
+<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIRELESS_SPI_SendByte
 </UL>
 
 <P><STRONG><a name="[182]"></a>SPI_I2S_ClearFlag</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f4xx_spi.o(.text), UNUSED)
@@ -1442,7 +1446,7 @@ Global Symbols
 <P><STRONG><a name="[84]"></a>SYSCFG_EXTILineConfig</STRONG> (Thumb, 66 bytes, Stack size 12 bytes, stm32f4xx_syscfg.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = SYSCFG_EXTILineConfig
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI_NVIC_Config
+<BR>[Called By]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI_NVIC_Config
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI_NVIC_Config_PushButton
 </UL>
 
@@ -1452,35 +1456,35 @@ Global Symbols
 
 <P><STRONG><a name="[188]"></a>SYSCFG_GetCompensationCellStatus</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, stm32f4xx_syscfg.o(.text), UNUSED)
 
-<P><STRONG><a name="[c5]"></a>strlen</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, strlen.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendSequence
+<P><STRONG><a name="[c6]"></a>strlen</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, strlen.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendSequence
 </UL>
 
-<P><STRONG><a name="[cb]"></a>__aeabi_dmul</STRONG> (Thumb, 228 bytes, Stack size 48 bytes, dmul.o(.text))
+<P><STRONG><a name="[cc]"></a>__aeabi_dmul</STRONG> (Thumb, 228 bytes, Stack size 48 bytes, dmul.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculate_roll
-<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculate_pitch
-<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_pow
-<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
+<BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculate_roll
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculate_pitch
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_pow
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
 <LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_poly
 <LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__mathlib_dbl_underflow
 </UL>
 
-<P><STRONG><a name="[c6]"></a>__aeabi_f2d</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, f2d.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculate_roll
-<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculate_pitch
+<P><STRONG><a name="[c7]"></a>__aeabi_f2d</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, f2d.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculate_roll
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculate_pitch
 </UL>
 
-<P><STRONG><a name="[c8]"></a>__aeabi_d2f</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, d2f.o(.text))
+<P><STRONG><a name="[c9]"></a>__aeabi_d2f</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, d2f.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __aeabi_d2f
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_float_round
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculate_roll
-<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculate_pitch
+<BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculate_roll
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculate_pitch
 </UL>
 
 <P><STRONG><a name="[189]"></a>__aeabi_uidiv</STRONG> (Thumb, 0 bytes, Stack size 12 bytes, uidiv.o(.text), UNUSED)
@@ -1492,7 +1496,7 @@ Global Symbols
 <P><STRONG><a name="[18a]"></a>__I$use$fp</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, iusefp.o(.text), UNUSED)
 
 <P><STRONG><a name="[e5]"></a>_float_round</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, fepilogue.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
+<BR><BR>[Called By]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
 </UL>
 
 <P><STRONG><a name="[18b]"></a>_float_epilogue</STRONG> (Thumb, 90 bytes, Stack size 4 bytes, fepilogue.o(.text), UNUSED)
@@ -1513,7 +1517,7 @@ Global Symbols
 <LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsl
 <LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_round
 </UL>
-<BR>[Called By]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
+<BR>[Called By]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
 <LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2d
 <LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 </UL>
@@ -1526,10 +1530,10 @@ Global Symbols
 <LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_round
 <LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_pow
+<BR>[Called By]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_pow
 <LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dsub
 <LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_drsub
-<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
 <LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_poly
 </UL>
 
@@ -1538,8 +1542,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_pow
-<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
+<BR>[Called By]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_pow
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
 </UL>
 
 <P><STRONG><a name="[ec]"></a>__aeabi_drsub</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, dadd.o(.text))
@@ -1547,8 +1551,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_pow
-<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
+<BR>[Called By]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_pow
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
 </UL>
 
 <P><STRONG><a name="[ed]"></a>__aeabi_ddiv</STRONG> (Thumb, 222 bytes, Stack size 32 bytes, ddiv.o(.text))
@@ -1556,14 +1560,14 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_round
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_pow
-<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
+<BR>[Called By]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_pow
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
 </UL>
 
 <P><STRONG><a name="[fa]"></a>__ARM_scalbn</STRONG> (Thumb, 46 bytes, Stack size 16 bytes, dscalb.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = __ARM_scalbn
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_pow
+<BR>[Called By]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_pow
 </UL>
 
 <P><STRONG><a name="[18c]"></a>scalbn</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, dscalb.o(.text), UNUSED)
@@ -1575,7 +1579,7 @@ Global Symbols
 <LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_round
 </UL>
 <BR>[Called By]<UL><LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sqrt
-<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sqrt
+<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sqrt
 </UL>
 
 <P><STRONG><a name="[ef]"></a>__aeabi_i2d</STRONG> (Thumb, 34 bytes, Stack size 16 bytes, dflti.o(.text))
@@ -1583,11 +1587,11 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_pow
+<BR>[Called By]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_pow
 </UL>
 
 <P><STRONG><a name="[f9]"></a>__aeabi_cdrcmple</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, cdrcmple.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_pow
+<BR><BR>[Called By]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_pow
 </UL>
 
 <P><STRONG><a name="[77]"></a>__scatterload</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, init.o(.text))
@@ -1628,7 +1632,7 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = __2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;transmitTiltAngles
-<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendSequence
+<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendSequence
 <LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mode_change_thread
 <LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;keypad
 <LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -1637,14 +1641,14 @@ Global Symbols
 <P><STRONG><a name="[f3]"></a>__ARM_fpclassify</STRONG> (Thumb, 48 bytes, Stack size 8 bytes, fpclassify.o(i.__ARM_fpclassify))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __ARM_fpclassify
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_pow
-<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
+<BR>[Called By]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_pow
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
 </UL>
 
-<P><STRONG><a name="[ca]"></a>__hardfp_atan</STRONG> (Thumb, 636 bytes, Stack size 48 bytes, atan.o(i.__hardfp_atan))
+<P><STRONG><a name="[cb]"></a>__hardfp_atan</STRONG> (Thumb, 636 bytes, Stack size 48 bytes, atan.o(i.__hardfp_atan))
 <BR><BR>[Stack]<UL><LI>Max Depth = 160<LI>Call Chain = __hardfp_atan &rArr; __kernel_poly &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
+<BR>[Calls]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
 <LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dsub
 <LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_drsub
 <LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
@@ -1654,14 +1658,14 @@ Global Symbols
 <LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fabs
 <LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__mathlib_dbl_underflow
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculate_roll
-<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculate_pitch
+<BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculate_roll
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculate_pitch
 </UL>
 
-<P><STRONG><a name="[c7]"></a>__hardfp_pow</STRONG> (Thumb, 3132 bytes, Stack size 184 bytes, pow.o(i.__hardfp_pow))
+<P><STRONG><a name="[c8]"></a>__hardfp_pow</STRONG> (Thumb, 3132 bytes, Stack size 184 bytes, pow.o(i.__hardfp_pow))
 <BR><BR>[Stack]<UL><LI>Max Depth = 296<LI>Call Chain = __hardfp_pow &rArr; __kernel_poly &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
+<BR>[Calls]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sqrt
 <LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2d
 <LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdrcmple
@@ -1676,37 +1680,37 @@ Global Symbols
 <LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fabs
 <LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__mathlib_dbl_underflow
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculate_roll
-<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculate_pitch
+<BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculate_roll
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculate_pitch
 </UL>
 
-<P><STRONG><a name="[c9]"></a>__hardfp_sqrt</STRONG> (Thumb, 122 bytes, Stack size 32 bytes, sqrt.o(i.__hardfp_sqrt))
+<P><STRONG><a name="[ca]"></a>__hardfp_sqrt</STRONG> (Thumb, 122 bytes, Stack size 32 bytes, sqrt.o(i.__hardfp_sqrt))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = __hardfp_sqrt &rArr; _dsqrt &rArr; _double_round
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dsqrt
 <LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__set_errno
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculate_roll
-<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculate_pitch
+<BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculate_roll
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculate_pitch
 </UL>
 
 <P><STRONG><a name="[f6]"></a>__kernel_poly</STRONG> (Thumb, 248 bytes, Stack size 24 bytes, poly.o(i.__kernel_poly))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = __kernel_poly &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
+<BR>[Calls]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
 <LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_pow
-<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
+<BR>[Called By]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_pow
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
 </UL>
 
 <P><STRONG><a name="[f4]"></a>__mathlib_dbl_underflow</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, dunder.o(i.__mathlib_dbl_underflow))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = __mathlib_dbl_underflow &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
+<BR>[Calls]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_pow
-<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
+<BR>[Called By]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_pow
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
 </UL>
 
 <P><STRONG><a name="[192]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
@@ -1717,8 +1721,8 @@ Global Symbols
 
 <P><STRONG><a name="[f7]"></a>__set_errno</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, errno.o(i.__set_errno))
 <BR><BR>[Called By]<UL><LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sqrt
-<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sqrt
-<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_pow
+<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sqrt
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_pow
 </UL>
 
 <P><STRONG><a name="[124]"></a>_init_box</STRONG> (Thumb, 70 bytes, Stack size 8 bytes, rt_membox.o(i._init_box))
@@ -1743,8 +1747,8 @@ Global Symbols
 <P><STRONG><a name="[f5]"></a>fabs</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, fabs.o(i.fabs))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = fabs
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_pow
-<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
+<BR>[Called By]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_pow
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
 </UL>
 
 <P><STRONG><a name="[ff]"></a>isr_evt_set</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, rt_event.o(i.isr_evt_set))
@@ -1753,7 +1757,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_psq_enq
 <LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_psh_req
 </UL>
-<BR>[Called By]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSignalSet
+<BR>[Called By]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSignalSet
 </UL>
 
 <P><STRONG><a name="[102]"></a>isr_mbx_receive</STRONG> (Thumb, 80 bytes, Stack size 8 bytes, rt_mailbox.o(i.isr_mbx_receive))
@@ -1778,7 +1782,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_psq_enq
 <LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_psh_req
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSemaphoreRelease
+<BR>[Called By]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSemaphoreRelease
 </UL>
 
 <P><STRONG><a name="[8c]"></a>osDelay</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, rt_cmsis.o(i.osDelay))
@@ -1800,7 +1804,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osTimerThread
 </UL>
 
-<P><STRONG><a name="[c4]"></a>osSemaphoreRelease</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, rt_cmsis.o(i.osSemaphoreRelease))
+<P><STRONG><a name="[c5]"></a>osSemaphoreRelease</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, rt_cmsis.o(i.osSemaphoreRelease))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = osSemaphoreRelease &rArr; isr_sem_send &rArr; rt_psq_enq
 </UL>
 <BR>[Calls]<UL><LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_id2obj
@@ -1809,11 +1813,11 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tilt_DispFlag_thread
 </UL>
 
-<P><STRONG><a name="[c3]"></a>osSemaphoreWait</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, rt_cmsis.o(i.osSemaphoreWait))
+<P><STRONG><a name="[c4]"></a>osSemaphoreWait</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, rt_cmsis.o(i.osSemaphoreWait))
 <BR><BR>[Called By]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tilt_DispFlag_thread
 </UL>
 
-<P><STRONG><a name="[98]"></a>osSignalSet</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, rt_cmsis.o(i.osSignalSet))
+<P><STRONG><a name="[99]"></a>osSignalSet</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, rt_cmsis.o(i.osSignalSet))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = osSignalSet &rArr; isr_evt_set &rArr; rt_psq_enq
 </UL>
 <BR>[Calls]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_tid2ptcb
@@ -1824,7 +1828,7 @@ Global Symbols
 <LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI0_IRQHandler
 </UL>
 
-<P><STRONG><a name="[95]"></a>osSignalWait</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, rt_cmsis.o(i.osSignalWait))
+<P><STRONG><a name="[96]"></a>osSignalWait</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, rt_cmsis.o(i.osSignalWait))
 <BR><BR>[Called By]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;transmitTiltAngles
 <LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tilt_detection_thread
 <LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tilt_DispFlag_thread
@@ -1840,13 +1844,13 @@ Global Symbols
 <BR>[Address Reference Count : 2]<UL><LI> rt_cmsis.o(i.svcKernelStart)
 <LI> rt_cmsis.o(i.svcThreadCreate)
 </UL>
-<P><STRONG><a name="[be]"></a>osThreadGetId</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, rt_cmsis.o(i.osThreadGetId))
+<P><STRONG><a name="[bf]"></a>osThreadGetId</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, rt_cmsis.o(i.osThreadGetId))
 <BR><BR>[Called By]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;transmitTiltAngles
 <LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tilt_detection_thread
-<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendSequence
+<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendSequence
 </UL>
 
-<P><STRONG><a name="[96]"></a>osThreadTerminate</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, rt_cmsis.o(i.osThreadTerminate))
+<P><STRONG><a name="[97]"></a>osThreadTerminate</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, rt_cmsis.o(i.osThreadTerminate))
 <BR><BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mode_change_thread
 </UL>
 
@@ -2214,7 +2218,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dsqrt
 <LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__set_errno
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_pow
+<BR>[Called By]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_pow
 </UL>
 
 <P><STRONG><a name="[62]"></a>svcDelay</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, rt_cmsis.o(i.svcDelay))
@@ -2343,50 +2347,50 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemInit
 </UL>
 
-<P><STRONG><a name="[9a]"></a>ITM_SendChar</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, fputc_debug.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_ttywrch
+<P><STRONG><a name="[9b]"></a>ITM_SendChar</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, fputc_debug.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_ttywrch
 <LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fputc
 </UL>
 
-<P><STRONG><a name="[9c]"></a>WIRELESS_SPI_SendByte</STRONG> (Thumb, 106 bytes, Stack size 8 bytes, wireless_impl.o(.text))
+<P><STRONG><a name="[9d]"></a>WIRELESS_SPI_SendByte</STRONG> (Thumb, 106 bytes, Stack size 8 bytes, wireless_impl.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = WIRELESS_SPI_SendByte
 </UL>
-<BR>[Calls]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_I2S_SendData
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_I2S_ReceiveData
-<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_I2S_GetFlagStatus
-<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIRELESS_SPI_TIMEOUT_UserCallback
+<BR>[Calls]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_I2S_SendData
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_I2S_ReceiveData
+<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_I2S_GetFlagStatus
+<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIRELESS_SPI_TIMEOUT_UserCallback
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIRELESS_SPI_Read
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_command_strobe
-<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIRELESS_SPI_Write
-<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_Status_Register
+<BR>[Called By]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIRELESS_SPI_Read
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_command_strobe
+<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIRELESS_SPI_Write
+<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_Status_Register
 </UL>
 
-<P><STRONG><a name="[ae]"></a>LIS302DL_SendByte</STRONG> (Thumb, 106 bytes, Stack size 8 bytes, stm32f4_discovery_lis302dl.o(.text))
+<P><STRONG><a name="[af]"></a>LIS302DL_SendByte</STRONG> (Thumb, 106 bytes, Stack size 8 bytes, stm32f4_discovery_lis302dl.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = LIS302DL_SendByte
 </UL>
-<BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_TIMEOUT_UserCallback
-<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_I2S_SendData
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_I2S_ReceiveData
-<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_I2S_GetFlagStatus
+<BR>[Calls]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_TIMEOUT_UserCallback
+<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_I2S_SendData
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_I2S_ReceiveData
+<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_I2S_GetFlagStatus
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Read
-<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Write
+<BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Read
+<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Write
 </UL>
 
-<P><STRONG><a name="[b1]"></a>LIS302DL_LowLevel_Init</STRONG> (Thumb, 294 bytes, Stack size 32 bytes, stm32f4_discovery_lis302dl.o(.text))
+<P><STRONG><a name="[b2]"></a>LIS302DL_LowLevel_Init</STRONG> (Thumb, 294 bytes, Stack size 32 bytes, stm32f4_discovery_lis302dl.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = LIS302DL_LowLevel_Init &rArr; GPIO_PinAFConfig
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_Init
-<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_I2S_DeInit
-<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_Cmd
-<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_PinAFConfig
-<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
+<BR>[Calls]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_Init
+<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_I2S_DeInit
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_Cmd
+<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_PinAFConfig
+<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
 <LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphClockCmd
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_AHB1PeriphClockCmd
 <LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Init
+<BR>[Called By]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS302DL_Init
 </UL>
 
 <P><STRONG><a name="[fc]"></a>isrMessagePut</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, rt_cmsis.o(i.isrMessagePut), UNUSED)
@@ -2397,7 +2401,7 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[105]"></a>rt_id2obj</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, rt_cmsis.o(i.rt_id2obj))
-<BR><BR>[Called By]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSemaphoreRelease
+<BR><BR>[Called By]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSemaphoreRelease
 <LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcTimerCall
 <LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcSemaphoreWait
 <LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcSemaphoreRelease
@@ -2411,7 +2415,7 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[106]"></a>rt_tid2ptcb</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, rt_cmsis.o(i.rt_tid2ptcb))
-<BR><BR>[Called By]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSignalSet
+<BR><BR>[Called By]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSignalSet
 <LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcThreadTerminate
 <LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcSignalSet
 </UL>

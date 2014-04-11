@@ -218,7 +218,7 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>181</TopLine>
+      <TopLine>178</TopLine>
       <CurrentLine>182</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>../startup_stm32f4xx.s</PathWithFileName>
@@ -240,10 +240,10 @@
       <FileType>1</FileType>
       <tvExp>1</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>34</ColumnNumber>
+      <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>210</TopLine>
-      <CurrentLine>229</CurrentLine>
+      <CurrentLine>212</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>../RTX_Conf_CM.c</PathWithFileName>
       <FilenameWithoutPath>RTX_Conf_CM.c</FilenameWithoutPath>
@@ -288,10 +288,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>2</ColumnNumber>
+      <ColumnNumber>6</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>42</TopLine>
-      <CurrentLine>219</CurrentLine>
+      <TopLine>231</TopLine>
+      <CurrentLine>244</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>../main.c</PathWithFileName>
       <FilenameWithoutPath>main.c</FilenameWithoutPath>
@@ -320,10 +320,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>17</ColumnNumber>
+      <ColumnNumber>2</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>173</TopLine>
-      <CurrentLine>174</CurrentLine>
+      <TopLine>204</TopLine>
+      <CurrentLine>223</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\wireless_Impl.c</PathWithFileName>
       <FilenameWithoutPath>wireless_Impl.c</FilenameWithoutPath>
@@ -354,8 +354,8 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>1</CurrentLine>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\wireless_spi_config.c</PathWithFileName>
       <FilenameWithoutPath>wireless_spi_config.c</FilenameWithoutPath>
@@ -368,10 +368,10 @@
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>58</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>1</CurrentLine>
+      <TopLine>20</TopLine>
+      <CurrentLine>43</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\wireless_spi_config.h</PathWithFileName>
       <FilenameWithoutPath>wireless_spi_config.h</FilenameWithoutPath>
@@ -514,8 +514,8 @@
       <Focus>0</Focus>
       <ColumnNumber>30</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>203</TopLine>
-      <CurrentLine>217</CurrentLine>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\tilt_thread.c</PathWithFileName>
       <FilenameWithoutPath>tilt_thread.c</FilenameWithoutPath>
@@ -546,8 +546,8 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>1</CurrentLine>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\accelerometer_conf.c</PathWithFileName>
       <FilenameWithoutPath>accelerometer_conf.c</FilenameWithoutPath>
@@ -626,8 +626,8 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>3</TopLine>
-      <CurrentLine>13</CurrentLine>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\keypad.c</PathWithFileName>
       <FilenameWithoutPath>keypad.c</FilenameWithoutPath>
@@ -658,8 +658,8 @@
       <Focus>0</Focus>
       <ColumnNumber>18</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>35</TopLine>
-      <CurrentLine>45</CurrentLine>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\LCD_Impl.c</PathWithFileName>
       <FilenameWithoutPath>LCD_Impl.c</FilenameWithoutPath>
@@ -674,8 +674,8 @@
       <Focus>0</Focus>
       <ColumnNumber>57</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>172</TopLine>
-      <CurrentLine>186</CurrentLine>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\LCD_Impl.h</PathWithFileName>
       <FilenameWithoutPath>LCD_Impl.h</FilenameWithoutPath>
@@ -1114,7 +1114,7 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1148</TopLine>
+      <TopLine>1144</TopLine>
       <CurrentLine>1149</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.c</PathWithFileName>
