@@ -214,7 +214,7 @@ void sendSequence(char* seq){
 		int size = strlen(message);
 	
 	printf ("size : %d",size);
-	int8_t transmit[2];
+	int8_t transmit[2] = {0, 0};
 	transmitGetID = osThreadGetId();
 //	while(1)
 //	{
