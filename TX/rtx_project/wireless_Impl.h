@@ -47,7 +47,7 @@
 #define SMARTRF_SETTING_PKTCTRL0   0x44 
 #define SMARTRF_SETTING_ADDR       0x00 
 #define SMARTRF_SETTING_PKTLEN     0x02 // PACKET LENGTH
-#define SMARTRF_SETTING_SYNCWORD   0xAF // 
+//#define SMARTRF_SETTING_SYNCWORD   0xAF // 
 
 
 /* Strobe command addresses --------------------------------------------------*/

@@ -8,6 +8,34 @@ Project File Date:  04/10/2014
 
 <h2>Output:</h2>
 Build target 'Project'
+compiling wireless_Impl.c...
+..\wireless_Impl.c(183): warning:  #940-D: missing return statement at end of non-void function "WIRELESS_SPI_TIMEOUT_UserCallback"
+  }
+..\wireless_Impl.c(192): warning:  #177-D: variable "roll" was declared but never referenced
+        uint8_t roll, pitch, maskMARCSTATE = 0x1F, maskTXBYTES = 0x7F, maskTxbytesBytesSent = SMARTRF_SETTING_PKTLEN, statusRegRet;
+..\wireless_Impl.c(192): warning:  #177-D: variable "pitch" was declared but never referenced
+        uint8_t roll, pitch, maskMARCSTATE = 0x1F, maskTXBYTES = 0x7F, maskTxbytesBytesSent = SMARTRF_SETTING_PKTLEN, statusRegRet;
+..\wireless_Impl.c(268): warning:  #177-D: variable "roll" was declared but never referenced
+        uint8_t roll, pitch, maskMARCSTATE = 0x1F, maskTXBYTES = 0x7F, maskTxbytesBytesSent = SMARTRF_SETTING_PKTLEN, statusRegRet;
+..\wireless_Impl.c(268): warning:  #177-D: variable "pitch" was declared but never referenced
+        uint8_t roll, pitch, maskMARCSTATE = 0x1F, maskTXBYTES = 0x7F, maskTxbytesBytesSent = SMARTRF_SETTING_PKTLEN, statusRegRet;
+..\wireless_Impl.c(268): warning:  #177-D: variable "maskTxbytesBytesSent" was declared but never referenced
+        uint8_t roll, pitch, maskMARCSTATE = 0x1F, maskTXBYTES = 0x7F, maskTxbytesBytesSent = SMARTRF_SETTING_PKTLEN, statusRegRet;
+..\wireless_Impl.c: 6 warnings, 0 errors
+linking...
+Program Size: Code=24932 RO-data=916 RW-data=184 ZI-data=8128  
+FromELF: creating hex file...
+".\obj\output.axf" - 0 Error(s), 6 Warning(s).
+Load "Z:\\Desktop\\Project\\TX\\rtx_project\\keil\\obj\\output.axf" 
+Erase Done.
+Programming Done.
+Verify OK.
+</pre>
+</body>
+</html>
+NCWORD" is undefined
+        setting = (uint8_t)SMARTRF_SETTING_SYNCWORD;
+..\wireless_Impl.c: 6 warnings, 1 error
 compiling tilt_thread.c...
 ..\temperature_thread.h(34): warning:  #1-D: last line of file ends without a newline
   void Temperature_Tim_Interrupt(void);
@@ -24,14 +52,5 @@ compiling tilt_thread.c...
 ..\tilt_thread.c(37): warning:  #550-D: variable "DisplayTiltFlag" was set but never used
   static uint8_t DisplayTiltFlag = 1; // Flag gets turned on then in tilt mode
 ..\tilt_thread.c: 7 warnings, 0 errors
-linking...
-Program Size: Code=24964 RO-data=916 RW-data=184 ZI-data=8128  
-FromELF: creating hex file...
-".\obj\output.axf" - 0 Error(s), 7 Warning(s).
-Load "Z:\\Desktop\\Project\\TX\\rtx_project\\keil\\obj\\output.axf" 
-Erase Done.
-Programming Done.
-Verify OK.
-</pre>
-</body>
-</html>
+".\obj\output.axf" - 1 Error(s), 15 Warning(s).
+Target not created

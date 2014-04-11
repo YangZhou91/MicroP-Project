@@ -446,13 +446,13 @@ void wireless_config_settings(void)
 	setting = (uint8_t)SMARTRF_SETTING_TEST0;
 	WIRELESS_SPI_Write(&setting, ctrl, 1); 	
 	
-	ctrl = 0x04;
-	setting = (uint8_t)SMARTRF_SETTING_SYNCWORD;
-	WIRELESS_SPI_Write(&setting, ctrl, 1); 	
+//	ctrl = 0x04;
+//	setting = (uint8_t)SMARTRF_SETTING_SYNCWORD;
+//	WIRELESS_SPI_Write(&setting, ctrl, 1); 	
 
-	ctrl = 0x05;
-	setting = (uint8_t)SMARTRF_SETTING_SYNCWORD;
-	WIRELESS_SPI_Write(&setting, ctrl, 1); 
+//	ctrl = 0x05;
+//	setting = (uint8_t)SMARTRF_SETTING_SYNCWORD;
+//	WIRELESS_SPI_Write(&setting, ctrl, 1); 
 	
 }
 
